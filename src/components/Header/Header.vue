@@ -27,7 +27,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul
-              class="navbar-nav mr-auto justify-content-between w-100 flex-wrap"
+              class="navbar-nav mr-auto align-content-center justify-content-md-between w-100 flex-wrap"
             >
               <li
                 class="nav-item" 
