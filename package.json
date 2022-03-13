@@ -1,0 +1,19 @@
+{
+  "name": "web-cv",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 5050"
+  },
+  "dependencies": {
+    "vue": "^3.2.31",
+    "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.2.2",
+    "sass": "^1.49.9",
+    "sass-loader": "^12.6.0",
+    "vite": "^2.8.4"
+  }
+}
