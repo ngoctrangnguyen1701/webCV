@@ -29,14 +29,11 @@
             <ul
               class="navbar-nav mr-auto align-content-center justify-content-md-between w-100 flex-wrap"
             >
-              <li
-                class="nav-item" 
+              <LinkItem
                 v-for="(item, index) in linkList"
                 :key="index"
-              >
-                <div class="bg"></div>
-                <a :href="item.link" class="nav-link">{{item.label}}</a>
-              </li>
+                :item="item"
+              />
             </ul>
           </div>
         </div>
@@ -53,17 +50,21 @@
 </template>
 
 <script>
-import linkList from './linkList'
+import linkList from './linkList.js'
+import LinkItem from './LinkItem.vue'
 
 export default {
   data() {
     return {
       linkList
     }
+  },
+  components: {
+    LinkItem,
   }
 }
 </script>
 
 <style scoped lang="scss">
-  @import './headerStyle.scss'
+  @import './scss/headerStyle.scss'
 </style>
