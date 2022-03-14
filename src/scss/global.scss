@@ -20,30 +20,6 @@ body {
     }
 }
 
-.skill{
-    .row{
-        justify-content: center;
-    }
-
-    &__circle{
-        text-align: center;
-        width: 250px;
-        height: 250px;
-        margin: 1rem;
-
-        border: 2px solid;
-        border-radius: 50%;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        i{
-            color:  $color-primary;
-        }
-    }
-}
-
 .project{
     &__item{
         position: relative;

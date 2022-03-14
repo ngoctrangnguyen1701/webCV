@@ -42,7 +42,9 @@
         <div class="header__avatar-small"></div>
       </div>
       <div class="header__name">
-        <p>Nguyễn Ngọc Trang</p>
+        <div class="d-flex justify-content-center">
+          <p>Nguyễn Ngọc Trang</p>
+        </div>
         <span>Frontend Developer</span>
       </div>
     </div>

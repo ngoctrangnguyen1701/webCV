@@ -53,8 +53,11 @@ header {
     letter-spacing: 3px;
 
     p {
+      // width: 100%;
+      overflow: hidden;
       transform: rotate(-5deg);
       margin-bottom: 0;
+      display: flex;
     }
 
     span {

@@ -1,0 +1,59 @@
+@import 'src/scss/variables.scss';
+
+.skill-item {
+  width: 250px;
+  height: 100px;
+  margin: 1rem;
+  // border: 2px solid #eee;
+  border-radius: 20px;
+  background-image: linear-gradient(white, white);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  position: relative;
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    z-index: -1;
+
+    background: linear-gradient(#eee, #eee);
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    border-radius: 22px;
+  }
+
+  &:hover {
+    background-image: linear-gradient(0deg, #000, #272727);
+    color: white;
+
+    &:before, &:after {
+      background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+        #0000ff, #00ff00,#ffff00, #ff0000);
+      background-size: 400%;
+  
+      animation: steam 20s linear infinite;
+    }
+  }
+
+}
+
+
+@keyframes steam {
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 400% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
