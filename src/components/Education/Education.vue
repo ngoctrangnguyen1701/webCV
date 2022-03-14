@@ -7,6 +7,7 @@
         :key="index"
         :item="item"
         :index="index"
+        :noPaddingBottom="index === (list.length - 1) ? true : false"
       />
     </div>
   </section>
@@ -19,7 +20,7 @@ import EducationItem from './EducationItem.vue'
 export default {
   data() {
     return {
-      list: educationList.vietnamese
+      list: educationList.vietnamese,
     }
   },
   components: {
