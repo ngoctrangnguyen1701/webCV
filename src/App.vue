@@ -4,6 +4,7 @@
   <Education/>
   <Certificate/>
   <Work/>
+  <Skill/>
 </template>
 
 <script setup>
@@ -12,6 +13,7 @@
   import Education from './components/Education/Education.vue'
   import Certificate from './components/Certificate/Certificate.vue'
   import Work from './components/Work/Work.vue'
+  import Skill from './components/Skill/Skill.vue'
 </script>
 
 <style lang="scss">
