@@ -137,19 +137,19 @@ body {
 //     }
 // }
 
-.certificate{
-    span{
-        color: $color-text-note;
-    }
-    &__img{
-        height: 100%;
-        background: {
-            image: url('../images/certificate-image.jpg');
-            position: bottom;
-            size: cover;
-        }
-    }
-}
+// .certificate{
+//     span{
+//         color: $color-text-note;
+//     }
+//     &__img{
+//         height: 100%;
+//         background: {
+//             image: url('../images/certificate-image.jpg');
+//             position: bottom;
+//             size: cover;
+//         }
+//     }
+// }
 
 .work{
     background-image: $color-linear-gradient;
