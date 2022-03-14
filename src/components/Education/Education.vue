@@ -2,7 +2,6 @@
   <section id="education" class="education">
     <h2 class="title">Học vấn</h2>
     <div class="container position-relative">
-      <!-- <div class="education__line d-none d-md-block"></div> -->
       <EducationItem
         v-for="(item, index) in list"
         :key="index"
