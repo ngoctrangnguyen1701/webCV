@@ -3,6 +3,7 @@
   <About/>
   <Education/>
   <Certificate/>
+  <Work/>
 </template>
 
 <script setup>
@@ -10,6 +11,7 @@
   import About from './components/About/About.vue'
   import Education from './components/Education/Education.vue'
   import Certificate from './components/Certificate/Certificate.vue'
+  import Work from './components/Work/Work.vue'
 </script>
 
 <style lang="scss">
