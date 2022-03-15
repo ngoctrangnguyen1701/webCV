@@ -1,5 +1,9 @@
 <template>
-  <div class="skill-item border-2" draggable="true">
+  <div
+    class="skill-item border-2" draggable="true"
+    @mouseenter="$emit('update:isHovering', true)"
+    @mouseleave="$emit('update:isHovering', false)"
+  >
     <div>
       <h6>{{item.text}}</h6>
       <star-rating 
@@ -22,7 +26,7 @@ import StarRating from 'vue-star-rating'
 //https://www.npmjs.com/package/vue-star-rating
 
 export default {
-  props: ['item'],
+  props: ['item', 'isHovering'],
   components: {
     StarRating
   },
