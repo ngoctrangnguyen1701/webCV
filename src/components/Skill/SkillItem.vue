@@ -1,5 +1,5 @@
 <template>
-  <div class="skill-item border-2">
+  <div class="skill-item border-2" draggable="true">
     <div>
       <h6>{{item.text}}</h6>
       <star-rating 
