@@ -35,7 +35,7 @@ export default {
     }
 
     &-opacity {
-      background-color: rgba(0, 0, 0, 0.4);
+      background-color: rgba(0, 0, 0, 0.6);
     }
   }
 }

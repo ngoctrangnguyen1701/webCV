@@ -9,7 +9,6 @@
   <End/>
   <Footer/>
   <BackToTop/>
-  />
 </template>
 
 <script setup>

@@ -30,6 +30,7 @@ export default {
 
 .expectation__bg-opacity {
   background-image: $color-linear-gradient;
+  // background: $color-primary;
   padding-top: 50px;
   padding-bottom: 50px;
   .row {

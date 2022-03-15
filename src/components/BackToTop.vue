@@ -1,25 +1,13 @@
 <template>
   <transition name="fade">
-    <div
+    <button
       id="pagetop"
-      class="fixed right-0 bottom-0"
+      class="btn"
       v-show="scrollY > 300"
       @click="toTop"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="48"
-        height="48"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="#4a5568"
-        stroke-width="1"
-        stroke-linecap="square"
-        stroke-linejoin="arcs"
-      >
-        <path d="M18 15l-6-6-6 6"/>
-      </svg>
-    </div>
+      <i class="fas fa-angle-up"></i>
+    </button>
   </transition>
 </template>
 
@@ -53,3 +41,39 @@ export default {
   },
 };
 </script>
+
+<style scoped lang="scss">
+  @import 'src/scss/variables.scss';
+  #pagetop {
+    background: $color-primary;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+
+    line-height: 40px;
+    font-size: 30px;
+    color: white;
+
+    position: fixed;
+    right: 15px;
+    bottom: 30px;
+    // transition: .3s;
+    // opacity: .7;
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+
+  .fade-enter-active,
+  .fade-leave-active {
+    opacity: 1;
+    transition: opacity 1s ease;
+  }
+
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+</style>

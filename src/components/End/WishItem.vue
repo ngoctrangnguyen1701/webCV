@@ -12,3 +12,10 @@ export default {
   props: ['item']
 }
 </script>
+
+<style scoped lang="scss">
+  @import 'src/scss/variables.scss';
+  span {
+    color: $color-text-note;
+  }
+</style>
