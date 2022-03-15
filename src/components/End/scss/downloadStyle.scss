@@ -1,0 +1,29 @@
+@import 'src/scss/variables.scss';
+
+.download__bg-opacity{
+  background-color: rgba(255, 255, 255, 0.9);
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.download__button{
+  display: block;
+  width: 250px;
+  height: 50px;
+
+  color: $color-text;
+  font-size: 20px;
+  text-align: center;
+  line-height: 50px;
+
+  background-image: $color-linear-gradient;
+  border-radius: 10px;
+
+  margin: 30px auto 0 auto;
+  transition: 0.5s;
+
+  &:hover{
+      background-color: $color-primary;
+      color: white;
+     transition: 0.5s;
+  }
+}
