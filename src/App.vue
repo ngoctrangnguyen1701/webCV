@@ -5,6 +5,7 @@
   <Certificate/>
   <Work/>
   <Skill/>
+  <Project/>
 </template>
 
 <script setup>
@@ -14,6 +15,7 @@
   import Certificate from './components/Certificate/Certificate.vue'
   import Work from './components/Work/Work.vue'
   import Skill from './components/Skill/Skill.vue'
+  import Project from './components/Project/Project.vue'
 </script>
 
 <style lang="scss">

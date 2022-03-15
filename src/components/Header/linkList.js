@@ -20,8 +20,8 @@ const linkList = [
     label: 'Kỹ năng',
   },
   {
-    link: '#product',
-    label: 'Sản phẩm',
+    link: '#project',
+    label: 'Dự án',
   },
   {
     link: '#end',

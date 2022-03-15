@@ -3,7 +3,7 @@
   <div
     class="position-relative ps-3 certificate-item"
     :class="isFirstItem ? 'mt-0' : 'mt-4'"
-    @mouseenter="positionHover($event)"
+    @mouseenter="$emit('positionHover', $event)"
   >
     <span>{{item.year}}</span>
     <h5 
@@ -15,17 +15,7 @@
 
 <script>
 export default {
-  props: ['item', 'index', 'isFirstItem'],
-  methods: {
-    positionHover(event) {
-      // console.log('certificateItem hover');
-      // console.log(event);
-      const height = event.target.offsetHeight
-      // console.log({height})
-      this.$emit('positionHover', {height, index: this.index})
-      // this.$emit('positionHover', this.index)
-    }
-  }
+  props: ['item', 'isFirstItem'],
 }
 </script>
 

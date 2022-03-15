@@ -15,7 +15,6 @@
             v-for="(item, index) in list"
             :key="index"
             :item="item"
-            :index="index"
             :isFirstItem="index === 0"
             @positionHover="positionHover"
           />
@@ -33,39 +32,28 @@ export default {
   data() {
     return {
       list: certificateList.vietnamese,
+      bgMove: ''
     }
   },
   components: {
     CertificateItem,
   },
+  mounted() {
+    //khi đã được gắn vào DOM
+    this.bgMove = document.getElementsByClassName('certificate__bg-item')[0].style
+  },
   methods: {
-    positionHover(obj) {
-      // console.log('positionHover', obj);
-      const {height, index} = obj
-      let translateY = 0
-      const items = document.getElementsByClassName('certificate-item')
-      // console.log({items});
-      for(let i = 0; i < index; i++){
-        // console.log(items[i])
-        // console.log(items[i].offsetHeight)
-        translateY += items[i].offsetHeight 
-        //offsetHeight để lấy cái giá trị thuộc tính heigh của element
-      }
+    positionHover(event) {
+      // console.log(event);
 
-      translateY = translateY + (24 * index)
-      /* 24 chính là cái margin-top: 24px, 
-      index ở vị trí thứ mấy thì cộng thêm mấy cái index tương ứng */
-      // console.log({translateY});
-
-      const bg = document.getElementsByClassName('certificate__bg-item')[0]
-      // console.log(bg);
-      bg.style.height = `${height}px`
-      bg.style.transform = `translateY(${translateY}px)`
+      //offsetHeight --> lấy cái height của item hover
+      //offsetTop --> khoảng cách từ trên xuống của element so với parent element
+      this.bgMove.height = `${event.target.offsetHeight}px`
+      this.bgMove.transform = `translateY(${event.target.offsetTop}px)`
     },
     exitHover() {
       // console.log('exitHover');
-      const bg = document.getElementsByClassName('certificate__bg-item')[0]
-      bg.style.height = 0
+      this.bgMove.height = 0
     }
   }
 }

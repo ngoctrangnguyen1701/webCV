@@ -1,0 +1,86 @@
+<template>
+  <section id="project" class="project">
+    <h2 class="title">Dự án thực hành</h2>
+    <div class="container">
+      <div class="row position-relative" @mouseleave="exitHover">
+        <div class="project-frame-move"><div></div></div>
+        <ProjectItem
+          v-for="(item, index) in list"
+          :key="index"
+          :item="item"
+          :index="index"
+          @projectItemHover="handleHover"
+        />
+      </div>
+    </div>
+  </section>
+</template>
+
+<script>
+import projectList from './projectList'
+import ProjectItem from './ProjectItem.vue'
+
+export default {
+  data() {
+    return {
+      list: projectList.vietnamese,
+      frameMove: ''
+    }
+  },
+  components: {
+    ProjectItem,
+  },
+  mounted() {
+    // const frameMove = document.getElementsByClassName('project-frame-move')[0]
+    this.frameMove = document.getElementsByClassName('project-frame-move')[0].style
+  },
+  methods: {
+    handleHover(event){
+      //offsetWidth: width của element
+      //offsetHeight: hieght của element
+      //offsetTop: khoảng cách từ trên xuống của element so với parent element
+      //offsetLeft: khoảng cách từ trái qua của element so với parent element
+
+      // const frameMove = document.getElementsByClassName('project-frame-move')[0]
+      // frameMove.style.width = event.target.offsetWidth + 'px'
+      // frameMove.style.height = event.target.offsetHeight + 'px'
+      // frameMove.style.transform = `translateX(${event.target.offsetLeft}px) translateY(${event.target.offsetTop}px)`
+      // frameMove.style.opacity = '1'
+      this.frameMove.width = event.target.offsetWidth + 'px'
+      this.frameMove.height = event.target.offsetHeight + 'px'
+      this.frameMove.transform = `translateX(${event.target.offsetLeft}px) translateY(${event.target.offsetTop}px)`
+      this.frameMove.opacity = '1'
+    },
+    exitHover() {
+      // const frameMove = document.getElementsByClassName('project-frame-move')[0]
+      // frameMove.style.opacity = '0'
+      this.frameMove.opacity = '0'
+    }
+  }
+}
+</script>
+
+<style scoped lang="scss">
+  @import 'src/scss/variables.scss';
+
+  .project-frame-move {
+    width: 0%;
+    height: 0%;
+    // width: 250px; /* thay đổi theo cái width của item hover */
+    // height: ?px; /* thay đổi theo cái hieght của item hover */
+    padding: 2px;
+    background-image: $color-linear-gradient;
+
+    position: absolute;
+    // transform: translateX(? px) translateY(? px); 
+    /* thay đổi theo cái width và height của các item đứng trước item hover */
+    transition: .5s;
+    opacity: 0;
+
+    div {
+      width: 100%;
+      height: 100%;
+      background: white;
+    }
+  }
+</style>
