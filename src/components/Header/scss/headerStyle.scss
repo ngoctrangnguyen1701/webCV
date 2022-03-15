@@ -59,6 +59,11 @@ header {
       margin-bottom: 0;
       display: flex;
     }
+    @media (max-width: 420px) {
+      p{
+        transform: rotate(0);
+      }
+    }
 
     span {
       font-family: $font-text;

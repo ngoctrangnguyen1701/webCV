@@ -8,7 +8,8 @@
   <Project/>
   <End/>
   <Footer/>
-  <BtnBackToTop/>
+  <BackToTop/>
+  />
 </template>
 
 <script setup>
@@ -21,7 +22,7 @@
   import Project from './components/Project/Project.vue'
   import End from './components/End/End.vue'
   import Footer from './components/Footer/Footer.vue'
-  import BtnBackToTop from './components/BtnBackToTop.vue'
+  import BackToTop from './components/BackToTop.vue'
 </script>
 
 <style lang="scss">

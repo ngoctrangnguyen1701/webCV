@@ -2,13 +2,23 @@
   <section id="education" class="education">
     <h2 class="title">Học vấn</h2>
     <div class="container position-relative">
-      <EducationItem
-        v-for="(item, index) in list"
-        :key="index"
-        :item="item"
-        :index="index"
-        :noPaddingBottom="index === (list.length - 1) ? true : false"
-      />
+      <!-- sử dụng 2 component riêng khi kích thước màn hình thay đổi -->
+      <div class="d-none d-md-block">
+        <EducationItem
+          v-for="(item, index) in list"
+          :key="index"
+          :item="item"
+          :index="index"
+          :noPaddingBottom="index === (list.length - 1) ? true : false"
+        />
+      </div>
+      <div class="d-block d-md-none">
+        <EducationItemMobile
+          v-for="(item, index) in list"
+          :key="index"
+          :item="item"
+        />
+      </div>
     </div>
   </section>
 </template>
@@ -16,6 +26,7 @@
 <script>
 import educationList from './educationList'
 import EducationItem from './EducationItem.vue'
+import EducationItemMobile from './EducationItemMobile.vue'
 
 export default {
   data() {
@@ -24,7 +35,8 @@ export default {
     }
   },
   components: {
-    EducationItem
+    EducationItem,
+    EducationItemMobile
   }
 }
 </script>
