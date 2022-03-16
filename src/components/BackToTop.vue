@@ -27,7 +27,7 @@ export default {
       if (this.scrollTimer) return;
       this.scrollTimer = setTimeout(() => {
         this.scrollY = window.scrollY;
-        console.log('window.scrollY: ', window.scrollY);
+        // console.log('window.scrollY: ', window.scrollY);
         clearTimeout(this.scrollTimer);
         this.scrollTimer = 0;
       }, 100);

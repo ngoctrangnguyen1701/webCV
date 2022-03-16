@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="col-md-6 text-black text-md-end">
-      <span>{{item.lable}}</span>
+      <span>{{item.label}}</span>
     </div>
     <div class="col-md-6 text-white">{{item.content}}</div>
   </div>

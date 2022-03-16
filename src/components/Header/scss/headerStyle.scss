@@ -18,9 +18,9 @@ header {
     font-size: 12px;
   }
 
-  .navbar-toggler {
-    position: relative;
-  }
+  // .navbar-toggler {
+  //   position: relative;
+  // }
 
   .header__avatar {
     height: 250px;
@@ -37,7 +37,7 @@ header {
       margin: auto auto;
 
       background: {
-        image: url('../images/avatar.jpg');
+        image: url('/images/avatar.jpg');
         position: center left;
         size: cover;
       }
