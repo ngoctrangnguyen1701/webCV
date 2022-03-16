@@ -79,21 +79,5 @@ Step 2: tạo router-link dẫn cái path và hash tới chỗ element
 Step 3: đặt router-view ở chỗ sẽ render ra element
 Step 4: tạo cái gọi là 'scroll behavior' (hành vi cuộn) trong Vue
 trong file chỗ tạo router thêm methods 'scrollBehavior' với các value sau
-
- scrollBehavior(to, from, savedPosition) {
-    console.log(savedPosition); //--> nơi cái điểm mà thanh scroll dừng lại khi load lại trang web
-    if(savedPosition) {
-      return savedPosition
-    }
-    else if(to.hash) {
-      return {
-        // selector: to.hash, --> cái này với vue3 hoặc là vue-router 4 không chạy
-        el: to.hash,
-        behavior: 'smooth',
-      }
-    }
-    else {
-      return {x: 0, y: 0};
-    }
-  }
+  ....
 */
