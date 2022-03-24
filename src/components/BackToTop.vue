@@ -24,6 +24,7 @@ export default {
   },
   methods: {
     handleScroll: function () {
+      //window cuộn xuống lớn hơn 300 thì sẽ cho xuất hiện btn-back-to-top
       if (this.scrollTimer) return;
       this.scrollTimer = setTimeout(() => {
         this.scrollY = window.scrollY;
@@ -57,8 +58,6 @@ export default {
     position: fixed;
     right: 15px;
     bottom: 30px;
-    // transition: .3s;
-    // opacity: .7;
 
     &:hover {
       opacity: .7;

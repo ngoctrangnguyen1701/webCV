@@ -41,19 +41,12 @@ export default {
       //offsetTop: khoảng cách từ trên xuống của element so với parent element
       //offsetLeft: khoảng cách từ trái qua của element so với parent element
 
-      // const frameMove = document.getElementsByClassName('project-frame-move')[0]
-      // frameMove.style.width = event.target.offsetWidth + 'px'
-      // frameMove.style.height = event.target.offsetHeight + 'px'
-      // frameMove.style.transform = `translateX(${event.target.offsetLeft}px) translateY(${event.target.offsetTop}px)`
-      // frameMove.style.opacity = '1'
       this.frameMove.width = event.target.offsetWidth + 'px'
       this.frameMove.height = event.target.offsetHeight + 'px'
       this.frameMove.transform = `translateX(${event.target.offsetLeft}px) translateY(${event.target.offsetTop}px)`
       this.frameMove.opacity = '1'
     },
     exitHover() {
-      // const frameMove = document.getElementsByClassName('project-frame-move')[0]
-      // frameMove.style.opacity = '0'
       this.frameMove.opacity = '0'
     }
   }
