@@ -26,18 +26,18 @@ header {
       background-color: white;
     }
 
-    .circle-flag, .circle-flag-vietnam, .circle-flag-english {
+    .circle-flag-vietnam, .circle-flag-english {
       width: 25px;
       height: 25px;
       border-radius: 50%;
       margin: 0 5px;
-      background-image: url('/public/images/flag-vi.svg');
+      background-image: url('/images/flag-vi.svg');
       background-size: cover;
       background-position: center;
     }
 
     .circle-flag-english {
-      background-image: url('/public/images/flag-en.svg');
+      background-image: url('/images/flag-en.svg');
     }
 
     .frame-language {
@@ -59,28 +59,6 @@ header {
 
       &:hover {
         background: #ebe7dd;
-      }
-    }
-  }
-
-  .header__avatar {
-    height: 250px;
-    width: 250px;
-    border-radius: 50%;
-    border: 2px solid white;
-    display: flex;
-    margin-top: 50px;
-
-    &-small {
-      height: 220px;
-      width: 220px;
-      border-radius: 50%;
-      margin: auto auto;
-
-      background: {
-        image: url('/images/avatar.jpg');
-        position: center left;
-        size: cover;
       }
     }
   }

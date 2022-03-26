@@ -7,8 +7,10 @@
             class="d-flex align-items-center justify-content-center py-1"
             @click.stop="showFrameLanguage = !showFrameLanguage"
           >
-            <span>Ngôn ngữ:</span>
-            <div class="circle-flag"></div>
+            <span>{{language === 'vietnamese' ? 'Ngôn ngữ:' : 'Language: '}}</span>
+            <div
+              :class="language === 'vietnamese' ? 'circle-flag-vietnam' : 'circle-flag-english'"
+            ></div>
             <i class="fas fa-caret-down"></i>
           </div>
 
@@ -36,33 +38,40 @@
         </div>
 
         <Navbar/>
-
-        <div class="header__avatar mx-auto">
-          <div class="header__avatar-small"></div>
-        </div>
-        <div class="header__name">
-          <div class="d-flex justify-content-center">
-            <p>Nguyễn Ngọc Trang</p>
-          </div>
-          <span>Frontend Developer</span>
-        </div>
+        <Avatar/>
       </div>
     </div>
   </header>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import Navbar from './Navbar.vue'
+import Avatar from './Avatar.vue'
+
+// let i = 0
+// function typeWriter(text) {
+//   if(i < text.length) {
+//     document.getElementById('my-name').innerHTML += text.charAt(i)
+//     i++
+//     setTimeout(typeWriter, 100)
+//   }
+//   else {
+//     i = 0
+//   }
+// }
 
 export default {
   components: {
     Navbar,
+    Avatar,
   },
   data() {
     return {
-      showFrameLanguage: false
+      showFrameLanguage: false,
     }
   },
+  computed: mapState(['language']),
   mounted() {
     //XỬ LÍ CLICK OUTSIDE
     const body = document.getElementsByTagName('body')[0]
@@ -72,7 +81,28 @@ export default {
     //vì component này lúc nào cũng render ở trang web,
     //nếu mà component này unmount thì có nghĩa là đã tắt trang web đi rồi
     //vì vậy không cần viết hàm removeListener khi component unmounted
+
+    //EFFECT TYPEWRITER
+    //https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_typewriter
+    // typeWriter(this.myName)
+    // setTimeout(() => {
+    //   // let i = 0
+    //   if(this.i < this.myName.length) {
+    //     document.getElementById('my-name').innerHTML += this.myName.charAt(this.i)
+    //     this.i += this.i
+    //   }
+    // }, 100)
   },
+  methods: {
+    // typeWriter() {
+    //   let i = 0
+    //   if(i < this.myName.length) {
+    //     document.getElementById('my-name').innerHTML += this.myName.charAt(i)
+    //     i++
+    //     setTimeout(this.typeWriter(), 100)
+    //   }
+    // }
+  }
 }
 </script>
 

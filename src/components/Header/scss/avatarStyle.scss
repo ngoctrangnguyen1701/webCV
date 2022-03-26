@@ -1,0 +1,50 @@
+@import 'src/scss/variables.scss';
+
+.header__avatar {
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  border: 2px solid white;
+  display: flex;
+  margin-top: 50px;
+
+  &-small {
+    height: 220px;
+    width: 220px;
+    border-radius: 50%;
+    margin: auto auto;
+
+    background: {
+      image: url('/images/avatar.jpg');
+      position: center left;
+      size: cover;
+    }
+  }
+}
+
+.header__name {
+  font-family: $font-name;
+  color: white;
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  letter-spacing: 3px;
+
+  p {
+    overflow: hidden;
+    transform: rotate(-5deg);
+    margin-bottom: 0;
+    display: flex;
+  }
+  @media (max-width: 420px) {
+    p{
+      transform: rotate(0);
+    }
+  }
+
+  span {
+    font-family: $font-text;
+    font-size: 16px;
+    transform: rotate(0deg);
+  }
+}

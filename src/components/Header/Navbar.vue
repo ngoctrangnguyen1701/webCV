@@ -17,7 +17,7 @@
           class="navbar-nav mr-auto align-content-center justify-content-md-between w-100 flex-wrap"
         >
           <LinkItem
-            v-for="(item, index) in list"
+            v-for="(item, index) in navbarList"
             :key="index"
             :item="item"
           />
@@ -28,25 +28,16 @@
 </template>
 
 <script>
-import {mapState} from 'vuex'
-import linkList from './linkList.js'
+import {mapGetters} from 'vuex'
 import LinkItem from './LinkItem.vue'
 
 export default {
   components: {
     LinkItem,
   },
-  data() {
-    return {
-      // list: linkList.vietnamese
-    }
-  },
   computed: {
-    list() {
-      return this.language === 'vietnamese' ? linkList.vietnamese : linkList.english
-    },
-    ...mapState ([
-      'language'
+    ...mapGetters ([
+      'navbarList'
     ])
   },
   watch: {

@@ -1,5 +1,4 @@
 <template>
-  <!-- {{this.$store.state.language}} -->
   <router-view/>
 </template>
 
@@ -12,8 +11,6 @@ export default {
   ]),
   watch: {
     language(newLang) {
-      // console.log({newLang});
-
       if(newLang === 'vietnamese'){
         this.$router.push('/')
       }

@@ -1,4 +1,5 @@
-import { createStore } from "vuex";
+import { createStore } from "vuex"
+import navbarList from "../data/navbarList"
 
 const store = createStore({
   state() {
@@ -6,10 +7,13 @@ const store = createStore({
       language: 'vietnamese'
     }
   },
+  getters: {
+    navbarList(state) {
+      return state.language === 'vietnamese' ? navbarList.vietnamese : navbarList.english
+    }
+  },
   mutations: {
     changeLanguge(state, payload) {
-      // console.log(state)
-      // console.log(payload);
       state.language = payload
     }
   }
