@@ -28,17 +28,37 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
 import linkList from './linkList.js'
 import LinkItem from './LinkItem.vue'
 
 export default {
-  data() {
-    return {
-      list: linkList.vietnamese
-    }
-  },
   components: {
     LinkItem,
-  }
+  },
+  data() {
+    return {
+      // list: linkList.vietnamese
+    }
+  },
+  computed: {
+    list() {
+      return this.language === 'vietnamese' ? linkList.vietnamese : linkList.english
+    },
+    ...mapState ([
+      'language'
+    ])
+  },
+  watch: {
+    language(newLang) {
+      console.log({newLang});
+      if(newLang === 'vietnamese') {
+        this.list = linkList.vietnamese
+      }
+      else if(newLang === 'english') {
+        this.list = linkList.english
+      }
+    }
+  },
 }
 </script>

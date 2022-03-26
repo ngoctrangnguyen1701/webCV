@@ -1,7 +1,6 @@
 <template>
   <li class="nav-item" >
     <div class="bg"></div>
-    <!-- <a :href="item.link" class="nav-link">{{item.label}}</a> -->
     <router-link
       tag="a"
       class="nav-link"
