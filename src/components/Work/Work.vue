@@ -1,10 +1,10 @@
 <template>
   <section id="work" class="work mt-5 pb-5">
-    <h2 class="title text-white pt-5">Kinh nghiệm làm việc</h2>
+    <h2 class="title text-white pt-5">{{$store.getters.getTitle('experience')}}</h2>
     <div class="container position-relative">
       <div class="work__line d-none d-md-block"></div>
       <WorkItem
-        v-for="(item, index) in list"
+        v-for="(item, index) in $store.getters.getList('workList')"
         :key="index"
         :item="item"
         :index="index"
@@ -14,15 +14,9 @@
 </template>
 
 <script>
-import workList from "./workList";
 import WorkItem from "./WorkItem.vue";
 
 export default {
-  data() {
-    return {
-      list: workList.vietnamese,
-    };
-  },
   components: {
     WorkItem,
   },

@@ -12,6 +12,20 @@ const wishList = {
       label: 'Thời gian làm việc:',
       content: 'có thể làm việc 5-6 ngày / tuần'
     },
+  ],
+  english: [
+    {
+      label: 'Work location:',
+      content: 'HCM city'
+    },
+    {
+      label: 'Position:',
+      content: 'work as frontend role'
+    },
+    {
+      label: 'Work time:',
+      content: 'can work 5-6 days/week'
+    },
   ]
 }
 

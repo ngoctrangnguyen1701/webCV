@@ -1,11 +1,13 @@
 <template>
   <section id="project" class="project">
-    <h2 class="title">Dự án thực hành</h2>
+    <h2 class="title">{{$store.getters.getTitle('project')}}</h2>
     <div class="container">
       <div class="row position-relative" @mouseleave="exitHover">
-        <div class="project-frame-move"><div></div></div>
+        <div class="project-frame-move">
+          <div class="w-100 h-100 bg-white"></div>
+        </div>
         <ProjectItem
-          v-for="(item, index) in list"
+          v-for="(item, index) in $store.getters.getList('projectList')"
           :key="index"
           :item="item"
           :index="index"
@@ -17,13 +19,11 @@
 </template>
 
 <script>
-import projectList from './projectList'
 import ProjectItem from './ProjectItem.vue'
 
 export default {
   data() {
     return {
-      list: projectList.vietnamese,
       frameMove: ''
     }
   },
@@ -69,11 +69,5 @@ export default {
     /* thay đổi theo cái width và height của các item đứng trước item hover */
     transition: .5s;
     opacity: 0;
-
-    div {
-      width: 100%;
-      height: 100%;
-      background: white;
-    }
   }
 </style>

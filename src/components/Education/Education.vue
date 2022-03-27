@@ -1,6 +1,6 @@
 <template>
   <section id="education" class="education">
-    <h2 class="title">Học vấn</h2>
+    <h2 class="title">{{$store.getters.getTitle('education')}}</h2>
     <div class="container position-relative">
       <!-- sử dụng 2 component riêng khi kích thước màn hình thay đổi -->
       <div class="d-none d-md-block">
@@ -24,20 +24,19 @@
 </template>
 
 <script>
-import educationList from './educationList'
 import EducationItem from './EducationItem.vue'
 import EducationItemMobile from './EducationItemMobile.vue'
 
 export default {
-  data() {
-    return {
-      list: educationList.vietnamese,
+  computed: {
+    list() {
+      return this.$store.getters.getList('educationList')
     }
   },
   components: {
     EducationItem,
     EducationItemMobile
-  }
+  },
 }
 </script>
 

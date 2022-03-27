@@ -1,46 +1,26 @@
 <template>
   <div class="col-md-6 download__bg-opacity">
     <h2 class="title mt-0 text-black">Download CV</h2>
-    <!-- <a
-      href="https://i.topcv.vn/nguyenngoctrang?ref=4598680"
-      target="_blank"
-      class="download__button"
-      >CV tiếng Việt</a
-    >
-    <a
-      href="https://i.topcv.vn/nguyenngoctrang?ref=4607057"
-      target="_blank"
-      class="download__button"
-      >CV tiếng Anh</a
-    > -->
     <button class="btn download__button" @click="downloadCV('vietnamese')">
-      CV tiếng Việt
+      {{language === 'vietnamese' ? 'CV tiếng Việt' : 'Vietnamese CV'}}
     </button>
     <button class="btn download__button" @click="downloadCV('english')">
-      CV tiếng Anh
+      {{language === 'vietnamese' ? 'CV tiếng Anh' : 'English CV'}}
     </button>
-    <!-- <a
-      class="download__button"
-      @click.prevent="downloadCV('vietnamese')"
-      href="no-script.html"
-    >CV tiếng Việt</a>
-    <a
-      class="download__button"
-      @click.prevent="downloadCV('english')"
-      href="no-script.html"
-    >CV tiếng Anh</a> -->
-    <!-- <iframe id="cv" style="display: none"></iframe> -->
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
+  computed: mapState(['language']),
   methods: {
-    downloadCV(language) {
+    downloadCV(lang) {
       //reference: https://attacomsian.com/blog/javascript-download-file
       // Create a new link
       const anchor = document.createElement("a");
-      if(language === 'vietnamese') {
+      if(lang === 'vietnamese') {
         anchor.href = "/public/files/Nguyen-Ngoc-Trang-Lap-Trinh-Vien-Front-End.pdf"
         anchor.download = "Nguyen-Ngoc-Trang-Lap-Trinh-Vien-Front-End"
       }

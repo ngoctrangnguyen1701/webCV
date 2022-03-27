@@ -1,6 +1,6 @@
 <template>
   <section id="certificate" class="certificate pb-5">
-    <h2 class="title">Chứng chỉ</h2>
+    <h2 class="title">{{$store.getters.getTitle('certificate')}}</h2>
     <div class="container">
       <div class="row">
         <div class="col-md-6">
@@ -12,7 +12,7 @@
         >
           <div class="certificate__bg-item"></div>
           <CertificateItem
-            v-for="(item, index) in list"
+            v-for="(item, index) in $store.getters.getList('certificateList')"
             :key="index"
             :item="item"
             :isFirstItem="index === 0"
@@ -25,13 +25,11 @@
 </template>
 
 <script>
-import certificateList from './certificateList'
 import CertificateItem from './CertificateItem.vue'
 
 export default {
   data() {
     return {
-      list: certificateList.vietnamese,
       bgMove: ''
     }
   },

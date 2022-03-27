@@ -3,22 +3,14 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
-
 export default {
-  computed: mapState([
-    'language'
-  ]),
   watch: {
-    language(newLang) {
-      if(newLang === 'vietnamese'){
-        this.$router.push('/')
-      }
-      else if(newLang === 'english'){
-        this.$router.push('/english')
-      }    
+    '$route'() {
+      // console.log(this.$route);
+      const lang = this.$route.path.includes('english') ? 'english' : 'vietnamese'
+      this.$store.commit('changeLanguage', lang)
     }
-  }
+  },
 }
 </script>
 

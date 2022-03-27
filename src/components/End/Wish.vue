@@ -1,8 +1,8 @@
 <template>
   <div class="col-md-6 expectation__bg-opacity">
-    <h2 class="title mt-0 text-white">Nguyện vọng</h2>
+    <h2 class="title mt-0 text-white">{{$store.getters.getTitle('expectation')}}</h2>
     <WishItem
-      v-for="(item, index) in list"
+      v-for="(item, index) in $store.getters.getList('wishList')"
       :key="index"
       :item="item"
     />    
@@ -10,15 +10,9 @@
 </template>
 
 <script>
-import wishList from './wishList'
 import WishItem from './WishItem.vue'
 
 export default {
-  data() {
-    return {
-      list: wishList.vietnamese
-    }
-  },
   components: {
     WishItem
   }
@@ -30,11 +24,7 @@ export default {
 
 .expectation__bg-opacity {
   background-image: $color-linear-gradient;
-  // background: $color-primary;
   padding-top: 50px;
   padding-bottom: 50px;
-  .row {
-    margin-bottom: 1rem;
-  }
 }
 </style>

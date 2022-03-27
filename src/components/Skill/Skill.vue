@@ -1,13 +1,13 @@
 <template>
   <section id="skill" class="skill">
-    <h2 class="title">Kỹ năng</h2>
+    <h2 class="title">{{$store.getters.getTitle('skill')}}</h2>
     <p :style="isHovering && 'opacity: 1'">
       Nhấn giữ chuột trái và kéo để thay đổi vị trí
     </p>
     <div class="container">
       <div class="row justify-content-center" id="sortable">
         <SkillItem
-          v-for="(item, index) in list"
+          v-for="(item, index) in $store.getters.getList('skillList')"
           :key="index"
           :item="item"
           v-model:isHovering="isHovering"
@@ -18,7 +18,6 @@
 </template>
 
 <script>
-import skillList from './skillList';
 import SkillItem from './SkillItem.vue';
 import Sortable from 'sortablejs';
 //https://www.npmjs.com/package/sortablejs
@@ -26,7 +25,6 @@ import Sortable from 'sortablejs';
 export default {
   data() {
     return {
-      list: skillList.vietnamese,
       isHovering: false,
     }
   },

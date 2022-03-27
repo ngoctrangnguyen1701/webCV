@@ -4,9 +4,21 @@
   </div>
   <div class="header__name">
     <div class="d-flex justify-content-center">
-      <p id="my-name">{{textRender}}</p>
+      <p>{{textRender}}</p>
     </div>
-    <span>Frontend Developer</span>
+    <div class="d-flex justify-content-center">
+      <div
+        class="my-job position-relative mt-4"
+        v-run-my-job:width="isRunMyJob ? '275px' : '0'"
+        v-run-my-job:transition="isRunMyJob ? '2s' : '0s'"
+      >
+        Frontend Developer
+        <i
+          class="fas fa-sun"
+          v-run-my-job:right="isRunMyJob ? '0' : '100%'"
+        ></i>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -17,7 +29,8 @@ export default {
       myName: 'Nguyễn Ngọc Trang',
       i: 0,
       textRender: '',
-      runEffect: null
+      runEffect: null,
+      isRunMyJob: false,
     }
   },
   methods: {
@@ -25,10 +38,11 @@ export default {
       // console.log('typeWriter');
       this.textRender = this.myName.slice(0, this.i + 1)
       this.i += 1
+      this.isRunMyJob = false
     },
   },
-  created() {
-    //khi component được tạo ra sẽ chạy method 'typeWriter'
+  mounted() {
+    //khi component được gắn vào DOM sẽ chạy method 'typeWriter'
     this.runEffect = setInterval(this.typeWriter, 150)
   },
   watch: {
@@ -36,14 +50,21 @@ export default {
       //lắng nghe textRender thay đổi, khi nào nó bằng với giá trị của 'myName'
       //sẽ clearInterval sau đó khoảng 5s mới cho chạy lại
       //đồng thời set lại giá trị của biến i về 0
-      console.log('textRender', newValue);
+      // console.log('textRender', newValue);
       if(newValue === this.myName) {
         clearInterval(this.runEffect)
         this.i = 0
+        this.isRunMyJob = true
         setTimeout(() => {
           this.runEffect = setInterval(this.typeWriter, 100)
         }, 5000)
       }
+    }
+  },
+  directives: {
+    'run-my-job'(el, binding) {
+      const {arg, value} = binding
+      el.style[arg] = value
     }
   }
 }

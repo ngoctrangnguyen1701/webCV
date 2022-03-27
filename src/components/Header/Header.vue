@@ -19,20 +19,22 @@
               class="frame-language position-absolute"
               v-if="showFrameLanguage"
             >
-              <div 
+              <router-link
+                tag="div"
+                to="/"
                 class="d-flex py-2 flag-item"
-                @click="$store.commit('changeLanguge', 'vietnamese')"
               >
                 <div class="circle-flag-vietnam"></div>
                 <span>Việt Nam</span>
-              </div>
-              <div
+              </router-link>
+              <router-link
+                tag="div"
+                to="/english"
                 class="d-flex py-2 flag-item"
-                @click="$store.commit('changeLanguge', 'english')"
               >
                 <div class="circle-flag-english"></div>
                 <span>English</span>
-              </div>
+              </router-link>
             </div>
           </transition>
         </div>
@@ -48,18 +50,6 @@
 import { mapState } from 'vuex'
 import Navbar from './Navbar.vue'
 import Avatar from './Avatar.vue'
-
-// let i = 0
-// function typeWriter(text) {
-//   if(i < text.length) {
-//     document.getElementById('my-name').innerHTML += text.charAt(i)
-//     i++
-//     setTimeout(typeWriter, 100)
-//   }
-//   else {
-//     i = 0
-//   }
-// }
 
 export default {
   components: {
@@ -81,28 +71,7 @@ export default {
     //vì component này lúc nào cũng render ở trang web,
     //nếu mà component này unmount thì có nghĩa là đã tắt trang web đi rồi
     //vì vậy không cần viết hàm removeListener khi component unmounted
-
-    //EFFECT TYPEWRITER
-    //https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_typewriter
-    // typeWriter(this.myName)
-    // setTimeout(() => {
-    //   // let i = 0
-    //   if(this.i < this.myName.length) {
-    //     document.getElementById('my-name').innerHTML += this.myName.charAt(this.i)
-    //     this.i += this.i
-    //   }
-    // }, 100)
   },
-  methods: {
-    // typeWriter() {
-    //   let i = 0
-    //   if(i < this.myName.length) {
-    //     document.getElementById('my-name').innerHTML += this.myName.charAt(i)
-    //     i++
-    //     setTimeout(this.typeWriter(), 100)
-    //   }
-    // }
-  }
 }
 </script>
 
@@ -111,7 +80,7 @@ export default {
 
   .fade-rotate-enter-from,
   .fade-rotate-leave-to {
-    transform: rotateY(180deg);
+    transform: rotateY(360deg);
     opacity: 0;
   }
 </style>

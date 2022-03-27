@@ -1,6 +1,6 @@
 <template>
-  <div class="row">
-    <div class="col-md-6 text-black text-md-end">
+  <div class="row mb-3 justify-content-end">
+    <div class="col-md-6">
       <span>{{item.label}}</span>
     </div>
     <div class="col-md-6 text-white">{{item.content}}</div>
