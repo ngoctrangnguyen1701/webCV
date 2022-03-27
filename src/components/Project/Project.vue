@@ -31,7 +31,6 @@ export default {
     ProjectItem,
   },
   mounted() {
-    // const frameMove = document.getElementsByClassName('project-frame-move')[0]
     this.frameMove = document.getElementsByClassName('project-frame-move')[0].style
   },
   methods: {

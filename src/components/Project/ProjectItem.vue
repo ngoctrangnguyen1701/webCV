@@ -1,11 +1,9 @@
 <template>
-  <!-- <div class="col-md-4 project__item" @mouseenter="$emit('projectItemHover', index)"> -->
-  <div class="col-md-4 project__item" @mouseenter="$emit('projectItemHover', $event)">
-  <!-- <div class="col-md-4 project__item" @mouseenter="test($event)"> -->
-    <!-- <div class="project__item-border"></div> -->
+  <div class="col-md-6 col-lg-3 project__item" @mouseenter="$emit('projectItemHover', $event)">
     <div class="project__item-content">
       <img :src="item.imgUrl" class="w-100 mb-3" />
-      <h5>{{item.title}}</h5>
+      <h5>{{item.name}}</h5>
+      <p>{{item.description}}</p>
       <a :href="item.webUrl" target="_blank" v-if="item.webUrl">
         <button class="btn btn-warning me-2">Web</button>
       </a>
