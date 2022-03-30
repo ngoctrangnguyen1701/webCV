@@ -3,6 +3,7 @@ const imgUrlList = [
   '/images/project-img2.jpg',
   '/images/project-img3.jpg',
   '/images/project-img4.jpg',
+  '/images/project-img5.jpg',
 ]
 
 const webUrlList = [
@@ -10,6 +11,7 @@ const webUrlList = [
   '',
   'https://ngoctrangnguyen1701.github.io/project-violin-shop',
   'https://game-caro-73268.firebaseapp.com/',
+  'https://ngoctrangnguyen1701.github.io/acttack-monster/',
 ]
 
 const sourceCodeUrlList = [
@@ -17,6 +19,7 @@ const sourceCodeUrlList = [
   'https://github.com/ngoctrangnguyen1701/server-side-rendering-project-store',
   'https://github.com/ngoctrangnguyen1701/project-violin-shop',
   'https://github.com/ngoctrangnguyen1701/game-caro',
+  'https://github.com/ngoctrangnguyen1701/acttack-monster',
 ]
 
 const nameAndDescription = {
@@ -35,7 +38,11 @@ const nameAndDescription = {
     },
     {
       name: 'Game caro online',
-      description: 'Xây dựng bằng React, Nodejs, MongoDb, Socket.io ',
+      description: 'Xây dựng bằng React, Nodejs, MongoDb, Socket.io',
+    },
+    {
+      name: 'Mini game - Attack Monster',
+      description: 'Xây dựng bằng file script của Vue',
     },
   ],
   english: [
@@ -54,6 +61,10 @@ const nameAndDescription = {
     {
       name: 'Game caro online',
       description: 'Built by bằng React, Nodejs, MongoDb, Socket.io',
+    },
+    {
+      name: 'Mini game - Attack Monster',
+      description: `Built by Vue's file script`,
     },
   ]
 }

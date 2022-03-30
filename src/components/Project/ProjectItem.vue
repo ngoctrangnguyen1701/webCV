@@ -2,8 +2,10 @@
   <div class="col-md-6 col-lg-3 project__item" @mouseenter="$emit('projectItemHover', $event)">
     <div class="project__item-content">
       <img :src="item.imgUrl" class="w-100 mb-3" />
-      <h5>{{item.name}}</h5>
-      <p>{{item.description}}</p>
+      <div style="height: 130px">
+        <h5>{{item.name}}</h5>
+        <p>{{item.description}}</p>
+      </div>
       <a :href="item.webUrl" target="_blank" v-if="item.webUrl">
         <button class="btn btn-warning me-2">Web</button>
       </a>
@@ -17,11 +19,6 @@
 <script>
 export default {
   props: ['item', 'index'],
-  methods: {
-    test(e){
-      console.log(e);
-    }
-  }
 }
 </script>
 

@@ -8,10 +8,6 @@ const sameProperty = [
     rating: 4,
   },
   {
-    text: 'Javascript, Jquery',
-    rating: 4,
-  },
-  {
     text: 'NodeJS, MongoDB',
     rating: 3.5,
   },
@@ -20,7 +16,7 @@ const sameProperty = [
     rating: 4,
   },
   {
-    text: 'VueJS',
+    text: 'VueJS, Vuex',
     rating: 3,
   },
   {

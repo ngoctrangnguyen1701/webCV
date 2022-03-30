@@ -22,11 +22,11 @@ export default {
       const anchor = document.createElement("a");
       if(lang === 'vietnamese') {
         anchor.href = "/public/files/Nguyen-Ngoc-Trang-Lap-Trinh-Vien-Front-End.pdf"
-        anchor.download = "Nguyen-Ngoc-Trang-Lap-Trinh-Vien-Front-End"
+        anchor.download = "Nguyen-Ngoc-Trang-Lap-Trinh-Vien-Front-End.pdf"
       }
       else {
         anchor.href = "/public/files/Nguyen-Ngoc-Trang-Front-End-Developer.pdf"
-        anchor.download = "Nguyen-Ngoc-Trang-Front-End-Developer"
+        anchor.download = "Nguyen-Ngoc-Trang-Front-End-Developer.pdf"
       }
 
       // Append to the DOM
