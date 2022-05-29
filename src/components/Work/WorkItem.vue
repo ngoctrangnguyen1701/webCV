@@ -1,6 +1,6 @@
 <template>
   <div 
-    class="row mt-4"
+    class="row mt-4 mt-md-0"
     :class="index % 2 && 'flex-row-reverse'"
   >
     <!-- position-relative để nó nằm trên cái element có position absolute -->

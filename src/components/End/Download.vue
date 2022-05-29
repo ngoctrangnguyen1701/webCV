@@ -2,48 +2,86 @@
   <div class="col-md-6 download__bg-opacity">
     <h2 class="title mt-0 text-black">Download CV</h2>
     <button class="btn download__button" @click="downloadCV('vietnamese')">
-      {{language === 'vietnamese' ? 'CV tiếng Việt' : 'Vietnamese CV'}}
+      {{ language === "vietnamese" ? "CV tiếng Việt" : "Vietnamese CV" }}
     </button>
+    <div class="loading-bar" v-if="isProgress && langDownload === 'vietnamese'">
+      <div class="loading-bar--progress">
+        <span class="first"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="last"></span>
+      </div>
+    </div>
     <button class="btn download__button" @click="downloadCV('english')">
-      {{language === 'vietnamese' ? 'CV tiếng Anh' : 'English CV'}}
+      {{ language === "vietnamese" ? "CV tiếng Anh" : "English CV" }}
     </button>
+    <div class="loading-bar" v-if="isProgress && langDownload === 'english'">
+      <div class="loading-bar--progress">
+        <span class="first"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="last"></span>
+      </div>
+    </div>
     <a href="" ref="anchor"></a>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState } from "vuex";
 
 export default {
-  computed: mapState(['language']),
+  computed: mapState(["language"]),
+  data() {
+    return {
+      isProgress: false,
+      langDownload: null,
+      anchor: null,
+    };
+  },
   methods: {
     downloadCV(lang) {
-      const anchor = this.$refs.anchor
-      const href = lang === 'vietnamese' ? "/files/Nguyen-Ngoc-Trang-Lap-Trinh-Vien-Front-End.pdf" : "/files/Nguyen-Ngoc-Trang-Front-End-Developer.pdf"
-      const fileDownload = lang === 'vietnamese' ? "Nguyen-Ngoc-Trang-Lap-Trinh-Vien-Front-End.pdf" : "Nguyen-Ngoc-Trang-Front-End-Developer.pdf"
-      anchor.href = href
-      anchor.download = fileDownload
-      anchor.click()
-      //reference: https://attacomsian.com/blog/javascript-download-file
-      // Create a new link
-      // const anchor = document.createElement("a");
-      // if(lang === 'vietnamese') {
-      //   anchor.href = "/public/files/Nguyen-Ngoc-Trang-Lap-Trinh-Vien-Front-End.pdf"
-      //   anchor.download = "Nguyen-Ngoc-Trang-Lap-Trinh-Vien-Front-End.pdf"
-      // }
-      // else {
-      //   anchor.href = "/public/files/Nguyen-Ngoc-Trang-Front-End-Developer.pdf"
-      //   anchor.download = "Nguyen-Ngoc-Trang-Front-End-Developer.pdf"
-      // }
+      this.anchor = this.$refs.anchor;
+      this.isProgress = true;
+      this.langDownload = lang === "vietnamese" ? "vietnamese" : "english";
+    },
+  },
+  watch: {
+    isProgress(newVal) {
+      if (newVal) {
+        setTimeout(() => {
+          const href =
+            this.langDownload === "vietnamese"
+              ? "https://www.topcv.vn/download-cv?cv_id=DgNWBFdTBwAMBFcGBF1SDANVBFJVBVAGAVcCBAc113"
+              : "https://www.topcv.vn/download-cv?cv_id=BldYC11cU1RUBQQGAw9UUgMPAVRWUFpUAARVWwebdf";
+          const fileDownload =
+            this.langDownload === "vietnamese"
+              ? "Nguyen-Ngoc-Trang-Lap-Trinh-Vien-Front-End.pdf"
+              : "Nguyen-Ngoc-Trang-Front-End-Developer.pdf";
+          this.anchor.href = href;
+          this.anchor.download = fileDownload;
+          this.anchor.click();
 
-      // // Append to the DOM
-      // document.body.appendChild(anchor);
-
-      // // Trigger `click` event
-      // anchor.click();
-
-      // // Remove element from DOM
-      // document.body.removeChild(anchor);
+          this.isProgress = false;
+          this.langDownload = null;
+        }, 5000);
+      }
     },
   },
 };
