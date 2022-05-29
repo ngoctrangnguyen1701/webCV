@@ -25,7 +25,7 @@ const sourceCodeUrlList = [
 const nameAndDescription = {
   vietnamese: [
     {
-      name: 'Web bán hàng',
+      name: 'E-Shopper',
       description: 'Xây dựng bằng React, Redux, Saga',
     },
     {
@@ -47,7 +47,7 @@ const nameAndDescription = {
   ],
   english: [
     {
-      name: 'Sales web',
+      name: 'E-Shopper',
       description: 'Built by React, Redux, Saga',
     },
     {
