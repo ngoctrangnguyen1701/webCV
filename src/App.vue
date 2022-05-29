@@ -5,7 +5,7 @@
 <script>
 export default {
   watch: {
-    '$route'() {
+    $route() {
       // console.log(this.$route);
       const lang = this.$route.path.includes('english') ? 'english' : 'vietnamese'
       this.$store.commit('changeLanguage', lang)

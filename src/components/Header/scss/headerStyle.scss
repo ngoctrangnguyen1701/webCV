@@ -8,25 +8,27 @@ header {
   }
 
   .header__bg-opacity {
-    padding: 10px 0 50px 0;
+    padding: 5px 0 50px 0;
     background-image: $color-linear-gradient;
     width: 100%;
     height: 100%;
   }
 
   .header__languages {
+    margin: 5px;
     font-size: 14px;
     color: black;
-    background-color: #dddd;
+    background-color: white;
     width: 150px;
     cursor: pointer;
     transition: .3s;
 
     &:hover {
-      background-color: white;
+      background-color: #dddd;
     }
 
-    .circle-flag-vietnam, .circle-flag-english {
+    .circle-flag-vietnam,
+    .circle-flag-english {
       width: 25px;
       height: 25px;
       border-radius: 50%;
@@ -78,8 +80,9 @@ header {
       margin-bottom: 0;
       display: flex;
     }
+
     @media (max-width: 420px) {
-      p{
+      p {
         transform: rotate(0);
       }
     }
@@ -88,6 +91,43 @@ header {
       font-family: $font-text;
       font-size: 16px;
       transform: rotate(0deg);
+    }
+  }
+
+  .header-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    align-items: center;
+    // margin-bottom: 10px;
+    @media (max-width: 452px) {
+      justify-content: center;
+    }
+  }
+
+  .search-job {
+    display: flex;
+    align-items: center;
+    // margin-right: 30px;
+    border-radius: 25px;
+    background: linear-gradient(109.6deg, rgb(170, 255, 169) 11.2%, rgb(17, 255, 189) 91.1%);
+    padding: 3px 10px;
+    margin: 5px;
+
+    color: black;
+    font-size: 14px;
+
+    @media (max-width: 462px) {
+      // margin-right: 15px;
+    }
+
+    &.off {
+      background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
+    }
+
+    .on-off {
+      font-weight: 600;
+      font-size: 18px;
     }
   }
 }

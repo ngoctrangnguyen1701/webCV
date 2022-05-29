@@ -2,41 +2,51 @@
   <header>
     <div class="header__bg-opacity">
       <div class="container">
-        <div class="text-end header__languages mb-2 rounded ms-auto position-relative">
-          <div
-            class="d-flex align-items-center justify-content-center py-1"
-            @click.stop="showFrameLanguage = !showFrameLanguage"
-          >
-            <span>{{language === 'vietnamese' ? 'Ngôn ngữ:' : 'Language: '}}</span>
-            <div
-              :class="language === 'vietnamese' ? 'circle-flag-vietnam' : 'circle-flag-english'"
-            ></div>
-            <i class="fas fa-caret-down"></i>
+        <div class="header-top">
+          <!-- <div class="search-job">
+            <div class="search-job-text">Status of job searching: </div>
+            <div class="on-off">ON</div>
+          </div> -->
+          <div class="search-job off">
+            <div class="search-job-text">Status of job searching: </div>
+            <div class="on-off">OFF</div>
           </div>
-
-          <transition name="fade-rotate">
-            <div 
-              class="frame-language position-absolute"
-              v-if="showFrameLanguage"
+          <div class="header__languages rounded position-relative">
+            <div
+              class="d-flex align-items-center justify-content-center py-1"
+              @click.stop="showFrameLanguage = !showFrameLanguage"
             >
-              <router-link
-                tag="div"
-                to="/"
-                class="d-flex py-2 flag-item"
-              >
-                <div class="circle-flag-vietnam"></div>
-                <span>Việt Nam</span>
-              </router-link>
-              <router-link
-                tag="div"
-                to="/english"
-                class="d-flex py-2 flag-item"
-              >
-                <div class="circle-flag-english"></div>
-                <span>English</span>
-              </router-link>
+              <span>{{language === 'vietnamese' ? 'Ngôn ngữ:' : 'Language: '}}</span>
+              <div
+                :class="language === 'vietnamese' ? 'circle-flag-vietnam' : 'circle-flag-english'"
+              ></div>
+              <i class="fas fa-caret-down"></i>
             </div>
-          </transition>
+
+            <transition name="fade-rotate">
+              <div 
+                class="frame-language position-absolute"
+                v-if="showFrameLanguage"
+              >
+                <router-link
+                  tag="div"
+                  to="/"
+                  class="d-flex py-2 flag-item"
+                >
+                  <div class="circle-flag-vietnam"></div>
+                  <span>Việt Nam</span>
+                </router-link>
+                <router-link
+                  tag="div"
+                  to="/english"
+                  class="d-flex py-2 flag-item"
+                >
+                  <div class="circle-flag-english"></div>
+                  <span>English</span>
+                </router-link>
+              </div>
+            </transition>
+          </div>
         </div>
 
         <Navbar/>
