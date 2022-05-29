@@ -19,7 +19,7 @@ export default {
   methods: {
     downloadCV(lang) {
       const anchor = this.$refs.anchor
-      const href = lang === 'vietnamese' ? "/public/files/Nguyen-Ngoc-Trang-Lap-Trinh-Vien-Front-End.pdf" : "/public/files/Nguyen-Ngoc-Trang-Front-End-Developer.pdf"
+      const href = lang === 'vietnamese' ? "/files/Nguyen-Ngoc-Trang-Lap-Trinh-Vien-Front-End.pdf" : "/files/Nguyen-Ngoc-Trang-Front-End-Developer.pdf"
       const fileDownload = lang === 'vietnamese' ? "Nguyen-Ngoc-Trang-Lap-Trinh-Vien-Front-End.pdf" : "Nguyen-Ngoc-Trang-Front-End-Developer.pdf"
       anchor.href = href
       anchor.download = fileDownload
