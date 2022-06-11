@@ -6,7 +6,8 @@ import educationList from "../data/educationList"
 import certificateList from "../data/certificateList"
 import workList from "../data/workList"
 import skillList from "../data/skillList"
-import projectList from "../data/projectList"
+import practiceProjectList from "../data/practiceProjectList"
+import realityProjectList from "../data/realityProjectList"
 import wishList from "../data/wishList"
 
 const store = createStore({
@@ -21,7 +22,8 @@ const store = createStore({
         certificateList,
         workList,
         skillList,
-        projectList,
+        practiceProjectList,
+        realityProjectList,
         wishList,
       }
     }
