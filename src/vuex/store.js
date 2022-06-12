@@ -4,11 +4,10 @@ import titleList from "../data/titleList"
 import infoList from "../data/infoList"
 import educationList from "../data/educationList"
 import certificateList from "../data/certificateList"
-import workList from "../data/workList"
+import experienceList from "../data/experienceList"
 import skillList from "../data/skillList"
 import practiceProjectList from "../data/practiceProjectList"
 import realityProjectList from "../data/realityProjectList"
-import wishList from "../data/wishList"
 
 const store = createStore({
   state() {
@@ -20,11 +19,10 @@ const store = createStore({
         infoList,
         educationList,
         certificateList,
-        workList,
+        experienceList,
         skillList,
         practiceProjectList,
         realityProjectList,
-        wishList,
       }
     }
   },

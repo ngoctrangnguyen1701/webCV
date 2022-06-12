@@ -9,10 +9,12 @@ import Page404 from './pages/Page404.vue'
 const routes = [
   {
     path: '/',
+    name: 'VietnamesePage',
     component: Home,
   },
   {
     path: '/english',
+    name: 'EnglishPage',
     component: Home,
   },
   {
@@ -34,7 +36,6 @@ const router = VueRouter.createRouter({
   history: VueRouter.createWebHashHistory(),
   routes,
   scrollBehavior(to, from, savedPosition) {
-    // console.log(savedPosition); 
     //savedPosition: nơi cái điểm mà thanh scroll dừng lại khi load lại trang web
     //nó là object chứa vị trí tọa độ {left: ..., top: ...} 
     if(savedPosition) {

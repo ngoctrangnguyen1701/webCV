@@ -7,28 +7,24 @@ const navbarList = {
       //có 2 cách ghi đối với thằng hash
     },
     {
-      label: 'Học vấn',
-      to: {path: '/', hash: '#education'}
-    },
-    {
-      label: 'Chứng chỉ',
-      to: {path: '/', hash: '#certificate'}
+      label: 'Dự án',
+      to: {path: '/', hash: '#project'}
     },
     {
       label: 'Kinh nghiệm',
-      to: {path: '/', hash: '#work'}
+      to: {path: '/', hash: '#experience'}
     },
     {
       label: 'Kỹ năng',
       to: {path: '/', hash: '#skill'}
     },
     {
-      label: 'Dự án',
-      to: {path: '/', hash: '#project'}
+      label: 'Học vấn',
+      to: {path: '/', hash: '#education'}
     },
     {
-      label: 'Nguyện vọng',
-      to: {path: '/', hash: '#end'}
+      label: 'Chứng chỉ',
+      to: {path: '/', hash: '#certificate'}
     },
     {
       label: 'Download CV',
@@ -41,28 +37,24 @@ const navbarList = {
       to: {path: '/english', hash: '#about'}
     },
     {
-      label: 'Education',
-      to: {path: '/english', hash: '#education'}
-    },
-    {
-      label: 'Certificate',
-      to: {path: '/english', hash: '#certificate'}
+      label: 'Project',
+      to: {path: '/english', hash: '#project'}
     },
     {
       label: 'Experience',
-      to: {path: '/english', hash: '#work'}
+      to: {path: '/english', hash: '#experience'}
     },
     {
       label: 'Skill',
       to: {path: '/english', hash: '#skill'}
     },
     {
-      label: 'Project',
-      to: {path: '/english', hash: '#project'}
+      label: 'Education',
+      to: {path: '/english', hash: '#education'}
     },
     {
-      label: 'Expectation',
-      to: {path: '/english', hash: '#end'}
+      label: 'Certificate',
+      to: {path: '/english', hash: '#certificate'}
     },
     {
       label: 'Download CV',

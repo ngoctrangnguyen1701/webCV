@@ -2,7 +2,7 @@
   <section id="skill" class="skill">
     <h2 class="title">{{$store.getters.getTitle('skill')}}</h2>
     <p :style="isHovering && 'opacity: 1'">
-      Nhấn giữ chuột trái và kéo để thay đổi vị trí
+      {{language === 'vietnamese' ? 'Nhấn giữ chuột trái và kéo để thay đổi vị trí các mục' : 'Hold left mouse and drag to change position of item'}}
     </p>
     <div class="container">
       <div class="row justify-content-center" id="sortable">
@@ -23,13 +23,18 @@ import Sortable from 'sortablejs';
 //https://www.npmjs.com/package/sortablejs
 
 export default {
+  components: {
+    SkillItem,
+  },
   data() {
     return {
       isHovering: false,
     }
   },
-  components: {
-    SkillItem,
+  computed: {
+    language() {
+      return this.$store.state.language
+    }
   },
   mounted() {
     //sau khi được gắn vào DOM sẽ chạy các code dưới đây

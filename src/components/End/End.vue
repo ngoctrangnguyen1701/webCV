@@ -1,10 +1,10 @@
 <template>
-  <section id="end" class="end mt-5 mb-2 pt-5">
+  <section id="end" class="end mt-5 pt-5">
     <div class="end__bg">
       <div class="end__bg-opacity py-md-4">
         <div class="container">
           <div class="row">
-            <Wish />
+            <Thankyou />
             <Download />
           </div>
         </div>
@@ -14,12 +14,12 @@
 </template>
 
 <script>
-import Wish from "./Wish.vue";
+import Thankyou from "./Thankyou.vue";
 import Download from "./Download.vue";
 
 export default {
   components: {
-    Wish,
+    Thankyou,
     Download,
   },
 };

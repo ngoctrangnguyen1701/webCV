@@ -1,10 +1,10 @@
 <template>
-  <section id="work" class="work mt-5 pb-5">
+  <section id="experience" class="work mt-5 pb-5">
     <h2 class="title text-white pt-5">{{$store.getters.getTitle('experience')}}</h2>
     <div class="container position-relative">
       <div class="work__line d-none d-md-block"></div>
-      <WorkItem
-        v-for="(item, index) in $store.getters.getList('workList')"
+      <ExperienceItem
+        v-for="(item, index) in $store.getters.getList('experienceList')"
         :key="index"
         :item="item"
         :index="index"
@@ -14,11 +14,11 @@
 </template>
 
 <script>
-import WorkItem from "./WorkItem.vue";
+import ExperienceItem from "./ExperienceItem.vue";
 
 export default {
   components: {
-    WorkItem,
+    ExperienceItem,
   },
 };
 </script>

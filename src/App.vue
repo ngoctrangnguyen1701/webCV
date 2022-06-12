@@ -9,7 +9,7 @@ export default {
       // console.log(this.$route);
       const lang = this.$route.path.includes('english') ? 'english' : 'vietnamese'
       this.$store.commit('changeLanguage', lang)
-    }
+    },
   },
 }
 </script>

@@ -4,7 +4,7 @@
     <button class="btn download__button" @click="downloadCV('vietnamese')">
       {{ language === "vietnamese" ? "CV tiếng Việt" : "Vietnamese CV" }}
     </button>
-    <div class="loading-bar" v-if="isProgress && langDownload === 'vietnamese'">
+    <!-- <div class="loading-bar" v-if="isProgress && langDownload === 'vietnamese'">
       <div class="loading-bar--progress">
         <span class="first"></span>
         <span></span>
@@ -19,11 +19,11 @@
         <span></span>
         <span class="last"></span>
       </div>
-    </div>
+    </div> -->
     <button class="btn download__button" @click="downloadCV('english')">
       {{ language === "vietnamese" ? "CV tiếng Anh" : "English CV" }}
     </button>
-    <div class="loading-bar" v-if="isProgress && langDownload === 'english'">
+    <!-- <div class="loading-bar" v-if="isProgress && langDownload === 'english'">
       <div class="loading-bar--progress">
         <span class="first"></span>
         <span></span>
@@ -38,7 +38,7 @@
         <span></span>
         <span class="last"></span>
       </div>
-    </div>
+    </div> -->
     <a href="" ref="anchor"></a>
   </div>
 </template>
@@ -49,7 +49,7 @@ import { mapState } from "vuex";
 export default {
   computed: mapState(["language"]),
   data() {
-    return {
+  return {
       isProgress: false,
       langDownload: null,
       anchor: null,
@@ -65,7 +65,7 @@ export default {
   watch: {
     isProgress(newVal) {
       if (newVal) {
-        setTimeout(() => {
+        // setTimeout(() => {
           const href =
             this.langDownload === "vietnamese"
               ? "https://www.topcv.vn/download-cv?cv_id=DgNWBFdTBwAMBFcGBF1SDANVBFJVBVAGAVcCBAc113"
@@ -80,7 +80,7 @@ export default {
 
           this.isProgress = false;
           this.langDownload = null;
-        }, 5000);
+        // }, 5000);
       }
     },
   },

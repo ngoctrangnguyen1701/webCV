@@ -142,8 +142,6 @@ export default {
   mounted() {
     this.frameMove = this.$refs.frameMove.style
     this.projectTabLine = this.$refs.projectTabLine.style
-    // this.frameMove = document.getElementsByClassName("project-frame-move")[0].style
-    // this.projectTabLine = document.getElementsByClassName("project-tab-line")[0].style
   },
   methods: {
     handleHover(event) {
@@ -223,12 +221,6 @@ export default {
   }
 }
 
-// .modal-dialog {
-//   background-size: cover;
-//   background-repeat: no-repeat;
-//   background-position: right;
-// }
-
 .modal-content {
   background: none;
   background-size: cover;
@@ -239,8 +231,7 @@ export default {
 }
 
 .modal-body {
-  // background-image: $color-linear-gradient;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.93);
   .modal-body-img {
     width: 100%;
     max-width: 300px;
@@ -249,7 +240,6 @@ export default {
   h4 {
     margin: 15px 0 30px;
     color: #ff9000;
-    // color: white;
     text-align: center;
   }
   .modal-body-content-item {
@@ -258,9 +248,7 @@ export default {
     p {
       margin: 0 5px 0 0;
       display: inline-block;
-      // margin-bottom: 0px;
       font-weight: bold;
-      // color: black;
       color: #ff9000;
     }
     span {
@@ -268,7 +256,6 @@ export default {
     }
     i {
       margin: 0 5px 0 15px;
-      // color: $color-text-note;
       color: white;
     }
   }
