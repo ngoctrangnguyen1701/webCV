@@ -4,15 +4,16 @@
     <div class="container">
       <div class="project-tab">
         <div class="project-tab-item" @click="chooseTab($event, 'reality')">
-          Dự án thực tế
+          {{language === 'vietnamese' ? 'Dự án thực tế' : 'Reality projects'}}
         </div>
         <div class="project-tab-item" @click="chooseTab($event, 'practice')">
-          Dự án thực hành
+          {{language === 'vietnamese' ? 'Dự án thực hành' : 'Practice projects'}}
+          
         </div>
-        <div class="project-tab-line"></div>
+        <div class="project-tab-line" ref="projectTabLine"></div>
       </div>
       <div class="position-relative" @mouseleave="exitHover">
-        <div class="project-frame-move">
+        <div class="project-frame-move" ref="frameMove">
           <div class="w-100 h-100 bg-white"></div>
         </div>
         <div class="row" v-if="tab === 'practice'">
@@ -76,19 +77,19 @@
               }}</a>
             </div>
             <div class="modal-body-content-item">
-              <p>Mô tả:</p>
+              <p>{{language === 'vietnamese' ? 'Mô tả:' : 'Description:'}}</p>
               <span>{{ projectInsideModal.description }}</span>
             </div>
             <div class="modal-body-content-item">
-              <p>Framework, thư viện:</p>
+              <p>{{language === 'vietnamese' ? 'Framework, thư viện:' : 'Framework, library:'}}</p>
               <span>{{ projectInsideModal.technical }}</span>
             </div>
             <div class="modal-body-content-item">
-              <p>Vai trò:</p>
+              <p>{{language === 'vietnamese' ? 'Vai trò:' : 'Role:'}}</p>
               <span>{{ projectInsideModal.role }}</span>
             </div>
             <div class="modal-body-content-item">
-              <p class="d-block">Các chức năng của web:</p>
+              <p>{{language === 'vietnamese' ? 'Các chức năng của web:' : 'Features:'}}</p>
               <div
                 v-for="(item, index) in projectInsideModal.features"
                 :key="index"
@@ -105,7 +106,7 @@
               @click="$refs.btnShowModal.click()"
               style="width: 150px"
             >
-              Đóng
+              {{language === 'vietnamese' ? 'Đóng' : 'Close'}}
             </button>
           </div>
         </div>
@@ -133,11 +134,16 @@ export default {
       projectInsideModal: null,
     };
   },
+  computed: {
+    language() {
+      return this.$store.state.language
+    }
+  },
   mounted() {
-    this.frameMove =
-      document.getElementsByClassName("project-frame-move")[0].style;
-    this.projectTabLine =
-      document.getElementsByClassName("project-tab-line")[0].style;
+    this.frameMove = this.$refs.frameMove.style
+    this.projectTabLine = this.$refs.projectTabLine.style
+    // this.frameMove = document.getElementsByClassName("project-frame-move")[0].style
+    // this.projectTabLine = document.getElementsByClassName("project-tab-line")[0].style
   },
   methods: {
     handleHover(event) {
@@ -165,10 +171,8 @@ export default {
     },
   },
   created() {
-    this.realityProjectList = this.$store.getters.getList("realityProjectList");
-    this.practiceProjectList = this.$store.getters.getList(
-      "practiceProjectList"
-    );
+    this.realityProjectList = this.$store.getters.getList("realityProjectList")
+    this.practiceProjectList = this.$store.getters.getList("practiceProjectList")
   },
 };
 </script>

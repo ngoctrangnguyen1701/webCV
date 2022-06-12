@@ -9,17 +9,11 @@
         <h5>{{ item.name }}</h5>
         <p>{{ item.description }}</p>
       </div>
-      <!-- <a :href="item.webUrl" target="_blank" v-if="item.webUrl">
-        <button class="btn btn-warning me-2">Web</button>
-      </a>
-      <a :href="item.sourceCodeUrl" target="_blank">
-        <button class="btn btn-secondary">Code</button>
-      </a> -->
       <button
         class="btn btn-warning"
         @click="$emit('projectInsideModal', item)"
       >
-        Xem thêm
+        {{language === 'vietnamese' ? 'Xem thêm' : 'Read more'}}
       </button>
     </div>
   </div>
@@ -28,6 +22,11 @@
 <script>
 export default {
   props: ["item", "index"],
+  computed: {
+    language() {
+      return this.$store.state.language
+    }
+  },
 };
 </script>
 
