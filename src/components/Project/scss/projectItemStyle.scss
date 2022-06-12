@@ -22,10 +22,13 @@
 
   &-content {
     background: white;
+    color: #FF9000;
   }
 
   p {
-    color: $color-text-note;
+    // color: $color-text-note;
+    // color: #817f7f;
+    color: $color-text;
     font-size: 13px;
   }
 
