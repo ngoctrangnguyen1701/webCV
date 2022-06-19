@@ -32,7 +32,7 @@ const infoList = {
     },
     {
       icon: 'fab fa-github',
-      label: 'https://github.com/ngoctrangnguyen1701?tab=repositories',
+      label: 'Xem trang github của tôi',
       link: 'https://github.com/ngoctrangnguyen1701?tab=repositories',
     },
   ],
@@ -69,7 +69,7 @@ const infoList = {
     },
     {
       icon: 'fab fa-github',
-      label: 'https://github.com/ngoctrangnguyen1701?tab=repositories',
+      label: 'Watch my github',
       link: 'https://github.com/ngoctrangnguyen1701?tab=repositories',
     },
   ]

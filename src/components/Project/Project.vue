@@ -61,7 +61,7 @@
     aria-labelledby="exampleModalLabel"
     aria-hidden="true"
   >
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
       <div
         class="modal-content"
         v-if="projectInsideModal"
@@ -204,10 +204,10 @@ export default {
 
   .project-tab-item {
     flex: 1 1 100%;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
     cursor: pointer;
     text-align: center;
-    font-size: 20px;
+    font-size: clamp(0.8rem, 2vw, 1.25rem);
   }
 
   .project-tab-line {

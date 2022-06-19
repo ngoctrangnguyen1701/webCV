@@ -3,7 +3,7 @@
     <div class="header__avatar-small"></div>
   </div>
   <div class="header__name">
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center frame-name">
       <p>{{textRender}}</p>
     </div>
     <div class="d-flex justify-content-center">

@@ -1,12 +1,12 @@
 <template>
-  <div class="row">
-    <div class="col-1 col-sm-2">
+  <div class="d-flex algin-item-center frame-item">
+    <div class="frame-icon">
       <img :src="item.icon" class="about__zalo" 
         v-if="item.icon.includes('zalo')"
       >
       <i v-else :class="item.icon"></i>
     </div>
-    <div class="col-11 col-sm-10">
+    <div class="frame-text">
       <a 
         v-if="item.link"
         :href="item.link" 

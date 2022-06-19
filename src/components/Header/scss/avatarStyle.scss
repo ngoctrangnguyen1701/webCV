@@ -36,9 +36,14 @@
     margin-bottom: 0;
     display: flex;
   }
-  @media (max-width: 420px) {
-    p{
-      transform: rotate(0);
+  // @media (max-width: 420px) {
+  //   p{
+  //     transform: rotate(0);
+  //   }
+  // }
+  @media (max-width: 414px) {
+    .frame-name {
+      height: 140px;
     }
   }
 
