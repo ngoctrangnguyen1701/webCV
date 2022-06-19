@@ -50,6 +50,7 @@ export default {
       //lắng nghe textRender thay đổi, khi nào nó bằng với giá trị của 'myName'
       //sẽ clearInterval sau đó khoảng 5s mới cho chạy lại
       //đồng thời set lại giá trị của biến i về 0
+      //còn biến 'isRunMyJob' sẽ set thành true để chạy dòng chữ 'Frontend developer' và cái icon
       // console.log('textRender', newValue);
       if(newValue === this.myName) {
         clearInterval(this.runEffect)
