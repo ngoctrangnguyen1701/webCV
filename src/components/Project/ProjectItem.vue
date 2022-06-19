@@ -1,7 +1,7 @@
 <template>
   <div class="col-md-6 col-lg-3 project__item" @mouseenter="$emit('projectItemHover', $event)">
     <div class="project__item-content">
-      <img :src="`src/assets/images/${item.imgUrl}.jpg`" class="w-100 mb-3" />
+      <img :src="imageUrl(item.imgUrl)" class="w-100 mb-3" alt="" />
       <div class="height-130">
         <h5>{{item.name}}</h5>
         <p>{{item.description}}</p>
@@ -16,9 +16,15 @@
   </div>
 </template>
 
+<script setup>
+//https://stackoverflow.com/questions/66419471/vue-3-vite-dynamic-img-src
+// Vue 3 Vite - dynamic img src
+  const imageUrl = value => new URL(`/src/assets/images/${value}.jpg`, import.meta.url).href;  
+</script>
+
 <script>
 export default {
-  props: ['item', 'index'],
+  props: ['item'],
 }
 </script>
 

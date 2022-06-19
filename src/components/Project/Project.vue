@@ -23,7 +23,6 @@
             )"
             :key="index"
             :item="item"
-            :index="index"
             @projectItemHover="handleHover"
           />
         </div>
@@ -34,7 +33,6 @@
             )"
             :key="index"
             :item="item"
-            :index="index"
             @projectItemHover="handleHover"
             @projectInsideModal="showModal($event)"
           />
@@ -65,7 +63,7 @@
       <div
         class="modal-content"
         v-if="projectInsideModal"
-        :style="`background-image: url('/public/${projectInsideModal.imgUrl}')`"
+        :style="{backgroundImage: `url(${imageUrl(projectInsideModal.imgUrl)})`}"
       >
         <div class="modal-body">
           <h4>{{ projectInsideModal.name }}</h4>
@@ -114,6 +112,17 @@
     </div>
   </div>
 </template>
+
+<script setup>
+// https://markus.oberlehner.net/blog/refs-and-the-vue-3-composition-api
+// **Lưu ý: nếu trong component vừa có setup vừa có refs
+// Phải có thêm phần khai báo biến ref cho các element có đặt chữ ‘ref’
+
+import {ref} from 'vue'
+const imageUrl = value => new URL(`/src/assets/images/${value}.jpg`, import.meta.url).href;  
+const projectTabLine = ref(null)
+const frameMove = ref(null)
+</script>
 
 <script>
 import ProjectItem from "./ProjectItem.vue";
