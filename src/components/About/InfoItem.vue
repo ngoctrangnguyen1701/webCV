@@ -1,9 +1,12 @@
 <template>
   <div class="d-flex algin-item-center frame-item">
     <div class="frame-icon">
-      <img :src="item.icon" class="about__zalo" 
+      <img src="~@/assets/images/icon-zalo.svg" class="about__zalo" 
         v-if="item.icon.includes('zalo')"
       >
+      <!-- <img :src="require(`src/assets/images/${item.icon}`.svg)" class="about__zalo" 
+        v-if="item.icon.includes('zalo')"
+      > -->
       <i v-else :class="item.icon"></i>
     </div>
     <div class="frame-text">

@@ -1,9 +1,9 @@
 const imgUrlList = [
-  '/images/project-img1.jpg',
-  '/images/project-img2.jpg',
-  '/images/project-img3.jpg',
-  '/images/project-img4.jpg',
-  '/images/project-img5.jpg',
+  'project-img1',
+  'project-img2',
+  'project-img3',
+  'project-img4',
+  'project-img5',
 ]
 
 const webUrlList = [

@@ -1,7 +1,7 @@
 const projectList = {
   vietnamese: [
     {
-      imgUrl: '/images/reality-project-img-1.jpg',
+      imgUrl: 'reality-project-img-1',
       link: '',
       name: 'Web admin nội bộ',
       description: 'Web admin dành cho nội bộ trong công ty (hỗ trợ công việc quản lý của phòng nhân sự, kế toán)',
@@ -14,7 +14,7 @@ const projectList = {
       ]  
     },
     {
-      imgUrl: '/images/reality-project-img-2.jpg',
+      imgUrl: 'reality-project-img-2',
       link: 'https://marketplace.herobook.io',
       name: 'Marketplace herobook',
       description: 'Web dùng để trao đổi buôn bán, chuyển nhượng các nhân vật hoặc các vật phẩm trong game NFT',
@@ -30,7 +30,7 @@ const projectList = {
   ],
   english: [
     {
-      imgUrl: '/images/reality-project-img-1.jpg',
+      imgUrl: 'reality-project-img-1',
       link: '',
       name: 'Web internal admin',
       description: 'Web admin for internal company (support the management of HR department and Accounting department)',
@@ -43,7 +43,7 @@ const projectList = {
       ]
     },
     {
-      imgUrl: '/images/reality-project-img-2.jpg',
+      imgUrl: 'reality-project-img-2',
       link: 'https://marketplace.herobook.io',
       name: 'Marketplace herobook',
       description: 'Web for trade, transfer heroes or items in game NFT',

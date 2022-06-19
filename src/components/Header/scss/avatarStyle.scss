@@ -15,7 +15,8 @@
     margin: auto auto;
 
     background: {
-      image: url('/images/avatar.jpg');
+      image: url('/src/assets/images/avatar.jpg');
+      // image: url('~@/assets/images/avatar.jpg'); --> cái này không ra, chưa tìm được giải pháp
       position: center left;
       size: cover;
     }
@@ -36,11 +37,7 @@
     margin-bottom: 0;
     display: flex;
   }
-  // @media (max-width: 420px) {
-  //   p{
-  //     transform: rotate(0);
-  //   }
-  // }
+
   @media (max-width: 414px) {
     .frame-name {
       height: 140px;
@@ -64,5 +61,7 @@
 }
 
 @keyframes rotate360 {
-  100%{transform: rotate(360deg);}
+  100% {
+    transform: rotate(360deg);
+  }
 }

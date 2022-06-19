@@ -26,7 +26,7 @@ const infoList = {
       link: null,
     },
     {
-      icon: 'images/icon-zalo.svg',
+      icon: 'icon-zalo',
       label: '0364034522',
       link: null,
     },
@@ -63,7 +63,7 @@ const infoList = {
       link: null,
     },
     {
-      icon: 'images/icon-zalo.svg',
+      icon: 'icon-zalo',
       label: '0364034522',
       link: null,
     },

@@ -1,7 +1,7 @@
 <template>
   <div class="col-md-6 col-lg-3 project__item" @mouseenter="$emit('projectItemHover', $event)">
     <div class="project__item-content">
-      <img :src="item.imgUrl" class="w-100 mb-3" />
+      <img :src="`src/assets/images/${item.imgUrl}.jpg`" class="w-100 mb-3" />
       <div class="height-130">
         <h5>{{item.name}}</h5>
         <p>{{item.description}}</p>

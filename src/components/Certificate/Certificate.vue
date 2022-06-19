@@ -42,15 +42,12 @@ export default {
   },
   methods: {
     positionHover(event) {
-      // console.log(event);
-
       //offsetHeight --> lấy cái height của item hover
       //offsetTop --> khoảng cách từ trên xuống của element so với parent element
       this.bgMove.height = `${event.target.offsetHeight}px`
       this.bgMove.transform = `translateY(${event.target.offsetTop}px)`
     },
     exitHover() {
-      // console.log('exitHover');
       this.bgMove.height = 0
     }
   }
@@ -63,7 +60,7 @@ export default {
   .certificate__img {
     height: 100%;
     background: {
-      image: url('/images/certificate-image.jpg');
+      image: url('/src/assets/images/certificate-image.jpg');
       position: bottom;
       size: cover;
     }

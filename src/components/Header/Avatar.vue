@@ -4,7 +4,7 @@
   </div>
   <div class="header__name">
     <div class="d-flex justify-content-center frame-name">
-      <p>{{textRender}}</p>
+      <p>{{ textRender }}</p>
     </div>
     <div class="d-flex justify-content-center">
       <div
@@ -26,24 +26,29 @@
 export default {
   data() {
     return {
-      myName: 'Nguyễn Ngọc Trang',
+      myName: "Nguyễn Ngọc Trang",
       i: 0,
-      textRender: '',
+      textRender: "",
       runEffect: null,
       isRunMyJob: false,
-    }
+    };
+  },
+  computed: {
+    avatar() {
+      return `url(@/assets/images/avatar.jpg)`
+    },
   },
   methods: {
     typeWriter() {
       // console.log('typeWriter');
-      this.textRender = this.myName.slice(0, this.i + 1)
-      this.i += 1
-      this.isRunMyJob = false
+      this.textRender = this.myName.slice(0, this.i + 1);
+      this.i += 1;
+      this.isRunMyJob = false;
     },
   },
   mounted() {
     //khi component được gắn vào DOM sẽ chạy method 'typeWriter'
-    this.runEffect = setInterval(this.typeWriter, 150)
+    this.runEffect = setInterval(this.typeWriter, 150);
   },
   watch: {
     textRender(newValue) {
@@ -52,25 +57,25 @@ export default {
       //đồng thời set lại giá trị của biến i về 0
       //còn biến 'isRunMyJob' sẽ set thành true để chạy dòng chữ 'Frontend developer' và cái icon
       // console.log('textRender', newValue);
-      if(newValue === this.myName) {
-        clearInterval(this.runEffect)
-        this.i = 0
-        this.isRunMyJob = true
+      if (newValue === this.myName) {
+        clearInterval(this.runEffect);
+        this.i = 0;
+        this.isRunMyJob = true;
         setTimeout(() => {
-          this.runEffect = setInterval(this.typeWriter, 100)
-        }, 5000)
+          this.runEffect = setInterval(this.typeWriter, 100);
+        }, 5000);
       }
-    }
+    },
   },
   directives: {
-    'run-my-job'(el, binding) {
-      const {arg, value} = binding
-      el.style[arg] = value
-    }
-  }
-}
+    "run-my-job"(el, binding) {
+      const { arg, value } = binding;
+      el.style[arg] = value;
+    },
+  },
+};
 </script>
 
-<style lang='scss' scoped>
-  @import './scss/avatarStyle.scss'
+<style lang="scss" scoped>
+@import "./scss/avatarStyle.scss";
 </style>

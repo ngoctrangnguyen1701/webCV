@@ -1,9 +1,9 @@
 <template>
-  <section id="end" class="end mt-5 pt-5">
+  <section id="end" class="end mt-lg-5 pt-5">
     <div class="end__bg">
       <div class="end__bg-opacity py-md-4">
         <div class="container">
-          <div class="row">
+          <div class="row frame-row flex-column-reverse flex-md-row">
             <Thankyou />
             <Download />
           </div>
@@ -29,7 +29,7 @@ export default {
 .end {
   &__bg {
     background: {
-      image: url("/images/bg-2.jpg");
+      image: url("/src/assets/images/bg-2.jpg");
       size: cover;
       position: center;
     }
@@ -37,6 +37,11 @@ export default {
     &-opacity {
       background-color: rgba(0, 0, 0, 0.7);
     }
+  }
+  .frame-row {
+    // @media (max-width: 767px) {
+    //   flex-direction: column-reverse;
+    // }
   }
 }
 </style>
