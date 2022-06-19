@@ -38,10 +38,5 @@ export default {
       background-color: rgba(0, 0, 0, 0.7);
     }
   }
-  .frame-row {
-    // @media (max-width: 767px) {
-    //   flex-direction: column-reverse;
-    // }
-  }
 }
 </style>
