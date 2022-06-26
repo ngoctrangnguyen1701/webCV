@@ -3,7 +3,7 @@ const workList = {
     {
       job: 'Lập trình viên Frontend',
       company: 'CÔNG TY PI SOLUTION',
-      period: '02/2022 - 06/2022',
+      period: '02/2022 - 07/2022',
       description: `Làm việc ở vị trí frontend.<br />
                     Tham gia xây dựng trang web dành cho game NFT.<br/>
                     Lắng nghe các phản hồi, sửa lỗi, cải tiến, thêm mới các chức năng cho trang web để các khách hàng có thể dễ dàng trao đổi mua bán các vật phẩm `,
@@ -12,9 +12,8 @@ const workList = {
     {
       job: 'Thực tập IT Frontend',
       company: 'CÔNG TY CÔNG NGHỆ BAGANG TECH',
-      period: '11/2021 - 12/2021',
-      description: `Thực tập fulltime 2 tháng trong vai trò frontend.<br />
-                    Tham gia nhóm xây dựng webapp dành cho nội bộ trong công ty.<br/>
+      period: '07/2021 - 01/2022',
+      description: `Tham gia nhóm xây dựng webapp dành cho nội bộ trong công ty.<br/>
                     Sửa lỗi, cải tiến và thêm mới các chức năng cho webapp theo đề nghị của khách hàng và tester`,
       icon: 'fas fa-laptop',
     },
@@ -33,7 +32,7 @@ const workList = {
     {
       job: 'Frontend Developer',
       company: 'PI SOLUTION',
-      period: '02/2022 - 06/2022',
+      period: '02/2022 - 07/2022',
       description: `Work as frontend role.<br />
                     Join the team what build web for game NFT.<br />
                     Listen feedbacks, fix bugs, improve and new functions that help client can exchange, sell or buy product.`,
@@ -42,9 +41,8 @@ const workList = {
     {
       job: 'IT Intern Frontend',
       company: 'BAGANG TECH',
-      period: '11/2021 - 12/2021',
-      description: `Work fulltime as frontend role in two months.<br />
-                    Join the team what build webapp for internal company.<br />
+      period: '07/2021 - 01/2022',
+      description: `Join the team what build webapp for internal company.<br />
                     Fix bugs and improve functions of webapp from offers of client and tester.`,
       icon: 'fas fa-laptop',
     },
