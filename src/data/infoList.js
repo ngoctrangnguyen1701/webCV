@@ -1,6 +1,11 @@
 const infoList = {
   vietnamese: [
     {
+      icon: 'fas fa-briefcase',
+      label: 'Kinh nghiệm 1 năm',
+      link: null,
+    },
+    {
       icon: 'far fa-calendar-alt',
       label: '24/12/1993',
       link: null,
@@ -37,6 +42,11 @@ const infoList = {
     },
   ],
   english: [
+    {
+      icon: 'fas fa-briefcase',
+      label: '1 year experience',
+      link: null,
+    },
     {
       icon: 'far fa-calendar-alt',
       label: '24/12/1993',
