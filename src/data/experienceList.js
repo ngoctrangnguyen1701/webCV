@@ -2,6 +2,16 @@ const workList = {
   vietnamese: [
     {
       job: 'Lập trình viên Frontend',
+      company: 'CÔNG TY CÔNG NGHỆ NAM LONG',
+      period: '08/2022 - Nay',
+      description: `Làm việc ở vị trí frontend.<br />
+                    Tham gia xây dựng các dự án nằm trong chuỗi dự án định hướng phát triển của công ty.<br/>
+                    Trao đổi với phía Backend, Tester để tối ưu hóa thao tác người dùng.</br>
+                    Nâng cấp, sửa đổi tính năng hệ thống khi khách hàng có yêu cầu`,
+      icon: 'fas fa-laptop',
+    },
+    {
+      job: 'Lập trình viên Frontend',
       company: 'CÔNG TY PI SOLUTION',
       period: '02/2022 - 07/2022',
       description: `Làm việc ở vị trí frontend.<br />
@@ -12,7 +22,7 @@ const workList = {
     {
       job: 'Thực tập IT Frontend',
       company: 'CÔNG TY CÔNG NGHỆ BAGANG TECH',
-      period: '07/2021 - 01/2022',
+      period: '11/2021 - 12/2021',
       description: `Tham gia nhóm xây dựng webapp dành cho nội bộ trong công ty.<br/>
                     Sửa lỗi, cải tiến và thêm mới các chức năng cho webapp theo đề nghị của khách hàng và tester`,
       icon: 'fas fa-laptop',
@@ -31,6 +41,16 @@ const workList = {
   english: [
     {
       job: 'Frontend Developer',
+      company: 'TECHNOLOGY NAMLONG',
+      period: '08/2022 - Now',
+      description: `Work as frontend role.<br />
+                    Join the team what build projects that in the company's development-oriented project chain.<br />
+                    Discuss with Backend, Tester to optimize user operation.</br>
+                    Upgrade, modify system features when required by customers.`,
+      icon: 'fas fa-laptop',
+    },
+    {
+      job: 'Frontend Developer',
       company: 'PI SOLUTION',
       period: '02/2022 - 07/2022',
       description: `Work as frontend role.<br />
@@ -41,7 +61,7 @@ const workList = {
     {
       job: 'IT Intern Frontend',
       company: 'BAGANG TECH',
-      period: '07/2021 - 01/2022',
+      period: '11/2021 - 12/2021',
       description: `Join the team what build webapp for internal company.<br />
                     Fix bugs and improve functions of webapp from offers of client and tester.`,
       icon: 'fas fa-laptop',

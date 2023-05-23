@@ -119,9 +119,14 @@
 // Phải có thêm phần khai báo biến ref cho các element có đặt chữ ‘ref’
 
 import {ref} from 'vue'
-const imageUrl = value => new URL(`/src/assets/images/${value}.jpg`, import.meta.url).href;  
-const projectTabLine = ref(null)
-const frameMove = ref(null)
+const imageUrl = value => {
+  if(!value.includes('http')) {
+    return new URL(`/src/assets/images/${value}.jpg`, import.meta.url).href
+  }
+  return value
+};
+// const projectTabLine = ref(null)
+// const frameMove = ref(null)
 </script>
 
 <script>
@@ -135,9 +140,9 @@ export default {
   },
   data() {
     return {
-      frameMove: "",
+      // frameMove: "",
       tab: "reality", //or 'practice'
-      projectTabLine: "",
+      // projectTabLine: "",
       realityProjectList: [],
       practiveProjectList: [],
       projectInsideModal: null,
@@ -149,8 +154,9 @@ export default {
     }
   },
   mounted() {
-    this.frameMove = this.$refs.frameMove.style
-    this.projectTabLine = this.$refs.projectTabLine.style
+    // this.frameMove = this.$refs.frameMove.style
+    // this.projectTabLine = this.$refs.projectTabLine.style
+    // console.log(this.projectTabLine);
   },
   methods: {
     handleHover(event) {
@@ -159,18 +165,37 @@ export default {
       //offsetTop: khoảng cách từ trên xuống của element so với parent element
       //offsetLeft: khoảng cách từ trái qua của element so với parent element
 
-      this.frameMove.width = event.target.offsetWidth + "px";
-      this.frameMove.height = event.target.offsetHeight + "px";
-      this.frameMove.transform = `translateX(${event.target.offsetLeft}px) translateY(${event.target.offsetTop}px)`;
-      this.frameMove.opacity = "1";
+      const width = event.target.offsetWidth + "px";
+      const height = event.target.offsetHeight + "px";
+      const transform = `translateX(${event.target.offsetLeft}px) translateY(${event.target.offsetTop}px)`
+      const frameMoveStyle = this.$refs['frameMove'].style
+      frameMoveStyle.width = width
+      frameMoveStyle.height = height
+      frameMoveStyle.transform = transform
+      frameMoveStyle.opacity = "1"
+
+      
+
+
+      // this.frameMove.width = event.target.offsetWidth + "px";
+      // this.frameMove.height = event.target.offsetHeight + "px";
+      // this.frameMove.transform = `translateX(${event.target.offsetLeft}px) translateY(${event.target.offsetTop}px)`;
+      // this.frameMove.opacity = "1";
     },
     exitHover() {
-      this.frameMove.opacity = "0";
+      this.$refs['frameMove'].style.opacity = "0"
+      // this.frameMove.opacity = "0";
     },
     chooseTab(event, tab) {
       this.tab = tab;
-      this.projectTabLine.width = event.target.offsetWidth + "px";
-      this.projectTabLine.left = event.target.offsetLeft + "px";
+      // this.projectTabLine.width = event.target.offsetWidth + "px";
+      // this.projectTabLine.left = event.target.offsetLeft + "px";
+      const width = event.target.offsetWidth + "px";
+      const left = event.target.offsetLeft + "px";
+      // this.projectTabLine.width = event.target.offsetWidth + "px";
+      // this.projectTabLine.left = event.target.offsetLeft + "px";
+      this.$refs['projectTabLine'].style.width = width
+      this.$refs['projectTabLine'].style.left = left
     },
     showModal(item) {
       this.projectInsideModal = item;
@@ -240,7 +265,7 @@ export default {
 }
 
 .modal-body {
-  background-color: rgba(0, 0, 0, 0.93);
+  background-color: rgba(0, 0, 0, 0.96);
   .modal-body-img {
     width: 100%;
     max-width: 300px;

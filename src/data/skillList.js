@@ -1,10 +1,10 @@
 const sameProperty = [
   {
-    text: 'HTML, CSS, SCSS',
+    text: 'HTML, CSS, Bootstrap, Web responsive, Animation',
     rating: 4.5,
   },
   {
-    text: 'Bootstrap, Web responsive, Animation',
+    text: 'Javascript',
     rating: 4,
   },
   {
@@ -17,10 +17,6 @@ const sameProperty = [
   },
   {
     text: 'VueJS, Vuex',
-    rating: 3,
-  },
-  {
-    text: 'Socket.io',
     rating: 4,
   },
 ]

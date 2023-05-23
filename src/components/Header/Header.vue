@@ -3,13 +3,19 @@
     <div class="header__bg-opacity">
       <div class="container">
         <div class="header-top">
-          <!-- <div class="search-job">
-            <div class="search-job-text">Status of job searching: </div>
-            <div class="on-off">ON</div>
-          </div> -->
-          <div class="search-job off">
-            <div class="search-job-text">Status of job searching: </div>
-            <div class="on-off">OFF</div>
+          <div class="search-job" :class="!isJobSearching && 'off'">
+            <template v-if="language === 'vietnamese'">
+              <div class="search-job-text">Trạng thái tìm việc: </div>
+              <div class="on-off">
+                {{isJobSearching ? 'BẬT' : 'TẮT'}}
+              </div>
+            </template>
+            <template v-else>
+              <div class="search-job-text">Status of job searching: </div>
+              <div class="on-off">
+                {{isJobSearching ? 'ON' : 'OFF'}}
+              </div>
+            </template>
           </div>
           <div class="header__languages rounded position-relative">
             <div
@@ -69,6 +75,7 @@ export default {
   data() {
     return {
       showFrameLanguage: false,
+      isJobSearching: true,
     }
   },
   computed: mapState(['language']),

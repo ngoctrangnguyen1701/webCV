@@ -12,7 +12,7 @@
         v-run-my-job:width="isRunMyJob ? '275px' : '0'"
         v-run-my-job:transition="isRunMyJob ? '2s' : '0s'"
       >
-        Frontend Developer
+        {{language === 'vietnamese' ? 'Lập trình viên Frontend' : 'Frontend Developer'}}
         <i
           class="fas fa-sun"
           v-run-my-job:right="isRunMyJob ? '0' : '100%'"
@@ -40,7 +40,6 @@ export default {
   },
   methods: {
     typeWriter() {
-      // console.log('typeWriter');
       this.textRender = this.myName.slice(0, this.i + 1);
       this.i += 1;
       this.isRunMyJob = false;

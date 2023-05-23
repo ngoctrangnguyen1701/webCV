@@ -21,25 +21,14 @@ export default {
       introduction: {
         vietnamese: {
           title:'Xin chào',
-          text: `Trong vòng 1 năm trở lại đây, tôi có cơ hội tìm hiểu về lĩnh vực
-            IT liên quan đến web frontend.<br />
-            Qua quá trình tự thực hành các dự án giả lập, cảm thấy vui với
-            việc coding và nhìn thấy thành quả do mình làm ra, nên mong muốn
-            có thể tham gia vào dự án thực tiễn ở công ty, được sự hỗ trợ từ
-            phía đồng nghiệp, qua đó có thêm sự hiểu biết, kỹ năng cũng như
-            kinh nghiệm trong mảng frontend này để có thể trở thành một lập
-            trình viên frontend chuyên nghiệp.`
+          text: `Trong hơn 1 năm qua, tôi đã không ngừng học hỏi nâng cao kỹ năng, tích lũy kinh nghiệm của bản thân qua từng dự án thực tế được may mắn tham gia cùng với các đồng nghiệp trong công ty.
+                </br>
+                Tôi muốn bản thân mình có thể được học hỏi, được nâng cấp nhiều hơn qua các môi trường chuyên nghiệp cũng như theo quy mô của dự án đòi hỏi nhiều hơn, qua đó gia tăng thêm sự hiểu biết, kỹ năng để có thể trở thành một developer frontend chuyên nghiệp.`
         },
         english: {
           title: 'Hello there!',
-          text: `In the past 1 year, I have had the opportunity to learn about 
-            the IT field related to the web frontend.<br/>
-            Through the process of practicing fake projects, 
-            feeling happy with coding and seeing the results I made,
-            so I want to be able to join in real projects at the company,
-            with support from the colleagues thereby gaining more knowledge,
-            skills and experience in this frontend field to be able to 
-            become a professional frontend developer.`
+          text: `Over 1 year, I haven't stopped learning to up my skills, collect experience through each project that I was lucky when I could joined with the colleagues in company.<br/>
+            I want be upgraded more through professional environment, as well as scale of project, thereby up my knowledge and skills to be able to become a professional frontend developer.`
         }
       }
     }
