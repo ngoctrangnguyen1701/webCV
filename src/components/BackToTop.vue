@@ -50,6 +50,7 @@ export default {
     width: 40px;
     height: 40px;
     padding: 0;
+    border: 1px solid #bfbfbf;
 
     line-height: 40px;
     font-size: 30px;

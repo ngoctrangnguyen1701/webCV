@@ -1,7 +1,8 @@
 <template>
   <div
-    class="col-md-6 col-lg-4 project__item"
+    class="project__item"
     @mouseenter="$emit('projectItemHover', $event)"
+    @click="$emit('projectItemClick', item)"
   >
     <div class="project__item-content">
       <img :src="imageUrl(item.imgUrl)" class="w-100 mb-3 project__item-image" alt="" />
@@ -9,10 +10,7 @@
         <h5>{{ item.name }}</h5>
         <p>{{ item.description }}</p>
       </div>
-      <button
-        class="btn btn-warning"
-        @click="$emit('projectInsideModal', item)"
-      >
+      <button class="btn btn-warning">
         {{ language === "vietnamese" ? "Xem thêm" : "Read more" }}
       </button>
     </div>

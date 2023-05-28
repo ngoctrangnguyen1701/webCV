@@ -12,22 +12,58 @@
         </div>
         <div class="project-tab-line" ref="projectTabLine"></div>
       </div>
-      <div class="position-relative" @mouseleave="exitHover">
+      
+      <div class="position-relative" ref="roadMove" @mouseleave="exitHover">
         <div class="project-frame-move" ref="frameMove">
           <div class="w-100 h-100 bg-white"></div>
         </div>
-        <div class="row" v-if="tab === 'practice'">
-          <ProjectItem
+        <div v-if="tab === 'practice'">
+          <Carousel :breakpoints="breakpoints">
+            <Slide
+              v-for="(item, index) in $store.getters.getList('practiceProjectList')"
+              :key="index"
+              @mouseenter="handleHover($event)"
+            >
+              <div class="carousel__item">
+                <ProjectItem
+                  :item="item"
+                />
+              </div>
+            </Slide>
+            <template #addons>
+              <Navigation />
+            </template>
+          </Carousel>
+          <!-- <ProjectItem
             v-for="(item, index) in $store.getters.getList(
               'practiceProjectList'
             )"
             :key="index"
             :item="item"
             @projectItemHover="handleHover"
-          />
+          /> -->
         </div>
-        <div class="row" v-if="tab === 'reality'">
-          <RealityProjectItem
+        <div v-if="tab === 'reality'">
+          <Carousel :breakpoints="breakpoints">
+            <Slide
+              v-for="(item, index) in $store.getters.getList('realityProjectList')"
+              :key="index"
+              @mouseenter="handleHover($event)"
+            >
+              <!-- @projectItemHover="handleHover" -->
+              <div class="carousel__item">
+                <RealityProjectItem
+                  :item="item"
+                  @projectInsideModal="showModal($event)"
+                  @projectItemClick="showModal($event)"
+                />
+              </div>
+            </Slide>
+            <template #addons>
+              <Navigation />
+            </template>
+          </Carousel>
+          <!-- <RealityProjectItem
             v-for="(item, index) in $store.getters.getList(
               'realityProjectList'
             )"
@@ -35,17 +71,18 @@
             :item="item"
             @projectItemHover="handleHover"
             @projectInsideModal="showModal($event)"
-          />
+            @projectItemClick="showModal($event)"
+          /> -->
         </div>
       </div>
     </div>
   </section>
-  <!-- Button trigger modal -->
+    <!-- Button trigger modal -->
   <button
     type="button"
     class="btn btn-primary d-none"
     data-bs-toggle="modal"
-    data-bs-target="#exampleModal"
+    data-bs-target="#modal-detail-project"
     ref="btnShowModal"
   >
     Launch demo modal
@@ -54,10 +91,7 @@
   <!-- Modal -->
   <div
     class="modal fade"
-    id="exampleModal"
-    tabindex="-1"
-    aria-labelledby="exampleModalLabel"
-    aria-hidden="true"
+    id="modal-detail-project"
   >
     <div class="modal-dialog modal-dialog-centered">
       <div
@@ -66,8 +100,12 @@
         :style="{backgroundImage: `url(${imageUrl(projectInsideModal.imgUrl)})`}"
       >
         <div class="modal-body">
-          <h4>{{ projectInsideModal.name }}</h4>
-          <div class="modal-body-content">
+          <h4 class="text-uppercase">{{ projectInsideModal.name }}</h4>
+          <div class="modal-body-content mt-3">
+            <div class="modal-body-content-item">
+              <p>{{language === 'vietnamese' ? 'Thời gian tham gia:' : 'Participation time:'}}</p>
+              <span>{{ projectInsideModal.startTime }} - {{ projectInsideModal.endTime }}</span>
+            </div>
             <div class="modal-body-content-item" v-if="projectInsideModal.link">
               <p>Link:</p>
               <a :href="projectInsideModal.link" target="blank">{{
@@ -130,6 +168,10 @@ const imageUrl = value => {
 </script>
 
 <script>
+import 'vue3-carousel/dist/carousel.css'
+import { defineComponent } from 'vue'
+import { Carousel, Slide, Navigation } from 'vue3-carousel'
+
 import ProjectItem from "./ProjectItem.vue";
 import RealityProjectItem from "./RealityProjectItem.vue";
 
@@ -137,6 +179,9 @@ export default {
   components: {
     ProjectItem,
     RealityProjectItem,
+    Carousel,
+    Slide,
+    Navigation,
   },
   data() {
     return {
@@ -146,12 +191,43 @@ export default {
       realityProjectList: [],
       practiveProjectList: [],
       projectInsideModal: null,
+
+      // carousel settings
+      settings: {
+        itemsToShow: 1,
+        // snapAlign: 'start',
+        wrapAround: true,
+        autoplay: 4000,
+      },
     };
   },
   computed: {
     language() {
       return this.$store.state.language
-    }
+    },
+    // breakpoints are mobile first
+    // any settings not specified will fallback to the carousel settings
+    breakpoints() {
+      // 700px and up
+      return {
+        500: {
+          ...this.settings,
+          itemsToShow: 1,
+          snapAlign: "start"
+        },
+        700: {
+          ...this.settings,
+          itemsToShow: 2,
+          snapAlign: "start"
+        },
+        // 1024 and up
+        1199: {
+          ...this.settings,
+          itemsToShow: 3,
+          snapAlign: 'start',
+        },
+      }
+    },
   },
   mounted() {
     // this.frameMove = this.$refs.frameMove.style
@@ -164,10 +240,22 @@ export default {
       //offsetHeight: hieght của element
       //offsetTop: khoảng cách từ trên xuống của element so với parent element
       //offsetLeft: khoảng cách từ trái qua của element so với parent element
+      // const top = event.target.getBoundingClientRect().top
+      const left = event.target.getBoundingClientRect().left
+
+      const roadMove = this.$refs['roadMove']
+      const roadMoveLeft = roadMove.getBoundingClientRect().left
+      // console.log(roadMove.getBoundingClientRect().left);
+
+      const distance = Math.abs(roadMoveLeft - left)
+      // console.log(distance);
 
       const width = event.target.offsetWidth + "px";
       const height = event.target.offsetHeight + "px";
-      const transform = `translateX(${event.target.offsetLeft}px) translateY(${event.target.offsetTop}px)`
+      // const transform = `translateX(${event.target.offsetLeft}px) translateY(${event.target.offsetTop}px)`
+      // const transform = `translateX(${event.target.screenX}px) translateY(${event.target.screenY}px)`
+      const transform = `translateX(${distance}px)`
+      // console.log(transform)
       const frameMoveStyle = this.$refs['frameMove'].style
       frameMoveStyle.width = width
       frameMoveStyle.height = height
@@ -262,10 +350,12 @@ export default {
   background-position: right;
   border: none;
   border-radius: 0;
+  background-color: yellow;
 }
 
 .modal-body {
-  background-color: rgba(0, 0, 0, 0.96);
+  background-color: black;
+  opacity: 0.95;
   .modal-body-img {
     width: 100%;
     max-width: 300px;

@@ -1,5 +1,5 @@
 <template>
-  <div class="col-md-6 col-lg-3 project__item" @mouseenter="$emit('projectItemHover', $event)">
+  <div class="project__item" @mouseenter="$emit('projectItemHover', $event)">
     <div class="project__item-content">
       <img :src="imageUrl(item.imgUrl)" class="w-100 mb-3" alt="" />
       <div class="height-130">

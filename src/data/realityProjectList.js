@@ -2,6 +2,8 @@ const projectList = {
   vietnamese: [
     {
       imgUrl: 'https://img.freepik.com/free-vector/goods-shipment-panoramas_1284-34263.jpg?w=996&t=st=1684853711~exp=1684854311~hmac=01a69d5255841e9ea6a52770756f92bcc2123965a00f1c92d1da631bbc920771',
+      startTime: '11/2022',
+      endTime: 'nay',
       link: '',
       name: 'Web quản lý điều độ xe',
       description: 'Web quản lý dành cho nội bộ trong công ty chuyên về logistics(hỗ trợ công việc quản lý của các phòng ban như thư ký, điều độ xe, vận chuyển đơn hàng)',
@@ -11,11 +13,29 @@ const projectList = {
         'Phân quyền các tác vụ phê duyệt, chỉnh sửa, tạo đơn',
         'Quản lý theo dõi trạng thái của đơn hàng',
         'Quản lý điều độ xe, chia xe theo từng năng lực xe',
-        'Quản lý bảo trì, bảo dưỡng, sửa chữa cho xe'
+        'Quản lý bảo trì, bảo dưỡng, sửa chữa cho xe',
+        'Tính lương, các khoản phụ cấp cho tài xế'
       ]  
     },
     {
+      imgUrl: 'https://img.freepik.com/free-vector/business-team-putting-motion-cogwheels_1262-19219.jpg?w=1380&t=st=1685277133~exp=1685277733~hmac=f5e1bcee829ad255475c51b65af7a832d5cc0d7147d32a40109ee5e69b9cdc8b',
+      startTime: '10/2022',
+      endTime: 'nay',
+      link: '',
+      name: 'Web admin cho chuỗi dự án của công ty',
+      description: 'Web quản lý các sản phẩm nằm trong chuỗi dự án của công ty',
+      technical: 'Vue2, Vuex',
+      role: 'Frontend',
+      features: [
+        'Phân quyền các menu chức năng theo từng tài khoản đăng nhập',
+        'Cài đặt các tính năng thông qua web cho các sản phẩm',
+        'Theo dõi tình trạng các sản phẩm',
+      ]
+    },
+    {
       imgUrl: 'reality-project-img-2',
+      startTime: '04/2022',
+      endTime: '07/2022',
       link: 'https://marketplace.herobook.io',
       name: 'Marketplace herobook',
       description: 'Web dùng để trao đổi buôn bán, chuyển nhượng các nhân vật hoặc các vật phẩm trong game NFT',
@@ -30,6 +50,8 @@ const projectList = {
     },
     {
       imgUrl: 'reality-project-img-1',
+      startTime: '11/2021',
+      endTime: '12/2021',
       link: '',
       name: 'Web admin nội bộ',
       description: 'Web admin dành cho nội bộ trong công ty (hỗ trợ công việc quản lý của phòng nhân sự, kế toán)',
@@ -45,6 +67,8 @@ const projectList = {
   english: [
     {
       imgUrl: 'https://img.freepik.com/free-vector/goods-shipment-panoramas_1284-34263.jpg?w=996&t=st=1684853711~exp=1684854311~hmac=01a69d5255841e9ea6a52770756f92bcc2123965a00f1c92d1da631bbc920771',
+      startTime: 'Nov 2022',
+      endTime: 'Now',
       link: '',
       name: 'Web management and moderation vehicle',
       description: 'Web admin for internal company that specializing in logistics(support the management of  department such as secretary, vehicle moderation , order delivery)',
@@ -58,7 +82,24 @@ const projectList = {
       ]  
     },
     {
+      imgUrl: 'https://img.freepik.com/free-vector/business-team-putting-motion-cogwheels_1262-19219.jpg?w=1380&t=st=1685277133~exp=1685277733~hmac=f5e1bcee829ad255475c51b65af7a832d5cc0d7147d32a40109ee5e69b9cdc8b',
+      startTime: '10/2022',
+      endTime: 'now',
+      link: '',
+      name: "Web admin for the company's project chain",
+      description: "Web to manage products that in the company's project chain",
+      technical: 'Vue2, Vuex',
+      role: 'Frontend',
+      features: [
+        'Permission by user account',
+        'Setting functions of product through web',
+        'Follow status of product',
+      ]
+    },
+    {
       imgUrl: 'reality-project-img-2',
+      startTime: 'Apr 2022',
+      endTime: 'Jul 2022',
       link: 'https://marketplace.herobook.io',
       name: 'Marketplace herobook',
       description: 'Web for trade, transfer heroes or items in game NFT',
@@ -73,6 +114,8 @@ const projectList = {
     },
     {
       imgUrl: 'reality-project-img-1',
+      startTime: 'Nov 2021',
+      endTime: 'Dec 2021',
       link: '',
       name: 'Web internal admin',
       description: 'Web admin for internal company (support the management of HR department and Accounting department)',

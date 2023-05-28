@@ -1,10 +1,13 @@
 @import 'src/scss/variables.scss';
 
 .project__item {
-  position: relative;
+  text-align: left;
+  // position: relative;
   padding-top: 12px;
   padding-bottom: 12px;
+  padding: 15px;
   transition: 0.25s;
+  // background-color: white;
 
   &-border {
     width: 0px;
@@ -31,7 +34,7 @@
   }
 
   &:hover {
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
     transition: 1s;
 
     .project__item-border {
