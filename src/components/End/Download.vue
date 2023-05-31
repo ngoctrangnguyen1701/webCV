@@ -2,54 +2,34 @@
   <div class="col-md-6 download__bg-opacity">
     <h2 class="title mt-0 text-black">Download CV</h2>
     <button class="btn download__button" @click="downloadCV('vietnamese')">
-      {{ language === "vietnamese" ? "CV tiếng Việt" : "Vietnamese CV" }}
+      {{$t('vietnamese-cv')}}
     </button>
     <button class="btn download__button" @click="downloadCV('english')">
-      {{ language === "vietnamese" ? "CV tiếng Anh" : "English CV" }}
+      {{$t('english-cv')}}
     </button>
-    <a href="" ref="anchor"></a>
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
-
 export default {
-  computed: mapState(["language"]),
-  data() {
-    return {
-      isProgress: false,
-      langDownload: null,
-      anchor: null,
-    };
-  },
   methods: {
     downloadCV(lang) {
-      this.anchor = this.$refs.anchor;
-      this.isProgress = true;
-      this.langDownload = lang === "vietnamese" ? "vietnamese" : "english";
+      const link = document.createElement('a');
+      const href =
+        lang === "vietnamese"
+          ? "https://www.topcv.vn/download-cv?cv_id=DgNWBFdTBwAMBFcGBF1SDANVBFJVBVAGAVcCBAc113"
+          : "https://www.topcv.vn/download-cv?cv_id=BldYC11cU1RUBQQGAw9UUgMPAVRWUFpUAARVWwebdf";
+      const fileDownload =
+        lang === "vietnamese"
+          ? "Nguyen-Ngoc-Trang-Lap-Trinh-Vien-Front-End"
+          : "Nguyen-Ngoc-Trang-Front-End-Developer";
+      document.body.appendChild(link); // Firefox requires the link to be in the body
+      link.download = fileDownload; //hiện giờ cách đổi tên này với chrome không có tác dụng
+      link.href = href;
+      link.click();
+      document.body.removeChild(link); // remove the link when done
     },
-  },
-  watch: {
-    isProgress(newVal) {
-      if (newVal) {
-        const href =
-          this.langDownload === "vietnamese"
-            ? "https://www.topcv.vn/download-cv?cv_id=DgNWBFdTBwAMBFcGBF1SDANVBFJVBVAGAVcCBAc113"
-            : "https://www.topcv.vn/download-cv?cv_id=BldYC11cU1RUBQQGAw9UUgMPAVRWUFpUAARVWwebdf";
-        const fileDownload =
-          this.langDownload === "vietnamese"
-            ? "Nguyen-Ngoc-Trang-Lap-Trinh-Vien-Front-End.pdf"
-            : "Nguyen-Ngoc-Trang-Front-End-Developer.pdf";
-        this.anchor.href = href;
-        this.anchor.download = fileDownload;
-        this.anchor.click();
-
-        this.isProgress = false;
-        this.langDownload = null;
-      }
-    },
-  },
+  }
 };
 </script>
 

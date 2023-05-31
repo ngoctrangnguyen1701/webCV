@@ -2,7 +2,7 @@
   <section id="skill" class="skill">
     <h2 class="title">{{$store.getters.getTitle('skill')}}</h2>
     <p :style="isHovering && 'opacity: 1'">
-      {{language === 'vietnamese' ? 'Nhấn giữ chuột trái và kéo để thay đổi vị trí các mục' : 'Hold left mouse and drag to change position of item'}}
+      {{$t('hold-left-mouse-and-drag-to-change-position-of-item')}}
     </p>
     <div class="container">
       <div class="row justify-content-center" id="sortable">

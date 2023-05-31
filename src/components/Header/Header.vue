@@ -4,25 +4,17 @@
       <div class="container">
         <div class="header-top">
           <div class="search-job" :class="!isJobSearching && 'off'">
-            <template v-if="language === 'vietnamese'">
-              <div class="search-job-text">Trạng thái tìm việc: </div>
-              <div class="on-off">
-                {{isJobSearching ? 'BẬT' : 'TẮT'}}
+            <div class="search-job-text">{{$t('status-of-job-searching')}}: </div>
+              <div class="on-off text-uppercase">
+                {{isJobSearching ? $t('on') : $t('off')}}
               </div>
-            </template>
-            <template v-else>
-              <div class="search-job-text">Status of job searching: </div>
-              <div class="on-off">
-                {{isJobSearching ? 'ON' : 'OFF'}}
-              </div>
-            </template>
-          </div>
+            </div>
           <div class="header__languages rounded position-relative">
             <div
               class="d-flex align-items-center justify-content-center py-1"
               @click.stop="showFrameLanguage = !showFrameLanguage"
             >
-              <span>{{language === 'vietnamese' ? 'Ngôn ngữ:' : 'Language: '}}</span>
+              <span>{{$t('language')}}</span>
               <div
                 :class="language === 'vietnamese' ? 'circle-flag-vietnam' : 'circle-flag-english'"
               ></div>
@@ -35,15 +27,13 @@
                 v-if="showFrameLanguage"
               >
                 <router-link
-                  tag="div"
                   to="/"
                   class="d-flex py-2 flag-item"
                 >
                   <div class="circle-flag-vietnam"></div>
-                  <span>Việt Nam</span>
+                  <span>Tiếng Việt</span>
                 </router-link>
                 <router-link
-                  tag="div"
                   to="/english"
                   class="d-flex py-2 flag-item"
                 >

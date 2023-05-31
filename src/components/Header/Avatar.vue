@@ -9,10 +9,10 @@
     <div class="d-flex justify-content-center">
       <div
         class="my-job position-relative mt-4"
-        v-run-my-job:width="isRunMyJob ? '275px' : '0'"
+        v-run-my-job:width="isRunMyJob ? language === 'vietnamese' ? '340px' : '275px' : '0'"
         v-run-my-job:transition="isRunMyJob ? '2s' : '0s'"
       >
-        {{language === 'vietnamese' ? 'Lập trình viên Frontend' : 'Frontend Developer'}}
+        {{$t('frontend-developer')}} 
         <i
           class="fas fa-sun"
           v-run-my-job:right="isRunMyJob ? '0' : '100%'"
@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
 export default {
   data() {
     return {
@@ -34,6 +35,7 @@ export default {
     };
   },
   computed: {
+    ...mapGetters(['language']),
     avatar() {
       return `url(@/assets/images/avatar.jpg)`
     },

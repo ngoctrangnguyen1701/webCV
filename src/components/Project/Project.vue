@@ -4,11 +4,10 @@
     <div class="container">
       <div class="project-tab">
         <div class="project-tab-item" @click="chooseTab($event, 'reality')">
-          {{language === 'vietnamese' ? 'Dự án thực tế' : 'Reality projects'}}
+          {{$t('reality-projects')}}
         </div>
         <div class="project-tab-item" @click="chooseTab($event, 'practice')">
-          {{language === 'vietnamese' ? 'Dự án thực hành' : 'Practice projects'}}
-          
+          {{$t('practice-projects')}}
         </div>
         <div class="project-tab-line" ref="projectTabLine"></div>
       </div>
@@ -34,14 +33,6 @@
               <Navigation />
             </template>
           </Carousel>
-          <!-- <ProjectItem
-            v-for="(item, index) in $store.getters.getList(
-              'practiceProjectList'
-            )"
-            :key="index"
-            :item="item"
-            @projectItemHover="handleHover"
-          /> -->
         </div>
         <div v-if="tab === 'reality'">
           <Carousel :breakpoints="breakpoints">
@@ -50,7 +41,6 @@
               :key="index"
               @mouseenter="handleHover($event)"
             >
-              <!-- @projectItemHover="handleHover" -->
               <div class="carousel__item">
                 <RealityProjectItem
                   :item="item"
@@ -63,16 +53,6 @@
               <Navigation />
             </template>
           </Carousel>
-          <!-- <RealityProjectItem
-            v-for="(item, index) in $store.getters.getList(
-              'realityProjectList'
-            )"
-            :key="index"
-            :item="item"
-            @projectItemHover="handleHover"
-            @projectInsideModal="showModal($event)"
-            @projectItemClick="showModal($event)"
-          /> -->
         </div>
       </div>
     </div>
@@ -103,7 +83,7 @@
           <h4 class="text-uppercase">{{ projectInsideModal.name }}</h4>
           <div class="modal-body-content mt-3">
             <div class="modal-body-content-item">
-              <p>{{language === 'vietnamese' ? 'Thời gian tham gia:' : 'Participation time:'}}</p>
+              <p>{{$t('participation-time')}}:</p>
               <span>{{ projectInsideModal.startTime }} - {{ projectInsideModal.endTime }}</span>
             </div>
             <div class="modal-body-content-item" v-if="projectInsideModal.link">
@@ -113,19 +93,19 @@
               }}</a>
             </div>
             <div class="modal-body-content-item">
-              <p>{{language === 'vietnamese' ? 'Mô tả:' : 'Description:'}}</p>
+              <p>{{$t('description')}}:</p>
               <span>{{ projectInsideModal.description }}</span>
             </div>
             <div class="modal-body-content-item">
-              <p>{{language === 'vietnamese' ? 'Framework, thư viện:' : 'Framework, library:'}}</p>
+              <p>{{`Framework, ${$t('library')}:`}}</p>
               <span>{{ projectInsideModal.technical }}</span>
             </div>
             <div class="modal-body-content-item">
-              <p>{{language === 'vietnamese' ? 'Vai trò:' : 'Role:'}}</p>
+              <p>{{$t('role')}}:</p>
               <span>{{ projectInsideModal.role }}</span>
             </div>
             <div class="modal-body-content-item">
-              <p>{{language === 'vietnamese' ? 'Các chức năng của web:' : 'Features:'}}</p>
+              <p>{{$t('features-of-web')}}:</p>
               <div
                 v-for="(item, index) in projectInsideModal.features"
                 :key="index"
@@ -142,7 +122,7 @@
               @click="$refs.btnShowModal.click()"
               style="width: 150px"
             >
-              {{language === 'vietnamese' ? 'Đóng' : 'Close'}}
+              {{$t('close')}}
             </button>
           </div>
         </div>

@@ -27,6 +27,7 @@ const store = createStore({
     }
   },
   getters: {
+    language: state => state.language,
     getTitle: state => title => state.list.titleList[state.language][title],
     getList: state => nameList => state.list[nameList][state.language]
   },

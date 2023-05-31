@@ -11,7 +11,7 @@
         <p>{{ item.description }}</p>
       </div>
       <button class="btn btn-warning">
-        {{ language === "vietnamese" ? "Xem thêm" : "Read more" }}
+        {{$t('read-more')}}
       </button>
     </div>
   </div>
@@ -44,7 +44,7 @@ export default {
 <style scoped lang="scss">
 @import "./scss/projectItemStyle.scss";
 .height-130 {
-  height: 130px;
+  height: 150px;
   @media (max-width: 767px) {
     height: auto;
   }
