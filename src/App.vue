@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     getIPAddress() {
-      fetch('http://api.ipify.org/')
+      fetch('https://api.ipify.org/')
         .then((res) => res.text())
         .then(ip => {
           this.ipAddress = ip
