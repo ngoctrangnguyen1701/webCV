@@ -17,8 +17,8 @@ export default {
       const link = document.createElement('a');
       const href =
         lang === "vietnamese"
-          ? "https://www.topcv.vn/download-cv?cv_id=DgNWBFdTBwAMBFcGBF1SDANVBFJVBVAGAVcCBAc113"
-          : "https://www.topcv.vn/download-cv?cv_id=BldYC11cU1RUBQQGAw9UUgMPAVRWUFpUAARVWwebdf";
+          ? "https://www.topcv.vn/download-cv?cv_id=VgpQWwYKBw5TUwdcVAJSCQQHUwpWCwIEClBRAA4310"
+          : "https://www.topcv.vn/download-cv?cv_id=AAkEVgJcCFFbDVEPWlMLUQEBAAwMXgAGB1FVAAd172";
       const fileDownload =
         lang === "vietnamese"
           ? "Nguyen-Ngoc-Trang-Lap-Trinh-Vien-Front-End"
