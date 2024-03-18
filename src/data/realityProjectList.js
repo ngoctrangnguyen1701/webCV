@@ -1,12 +1,27 @@
 const projectList = {
   vietnamese: [
     {
-      imgUrl: 'https://img.freepik.com/free-vector/goods-shipment-panoramas_1284-34263.jpg?w=996&t=st=1684853711~exp=1684854311~hmac=01a69d5255841e9ea6a52770756f92bcc2123965a00f1c92d1da631bbc920771',
-      startTime: '11/2022',
+      imgUrl: 'https://img.freepik.com/free-photo/close-up-scanning-box_23-2148923094.jpg?t=st=1710774494~exp=1710778094~hmac=d129c93809d7da5b6d35cb886fb04035724abd752f5d39ea6f822192cc2db71f&w=1060',
+      startTime: '11/2023',
       endTime: 'nay',
       link: '',
+      name: 'Web quản lý quét Barcode',
+      description: 'Web quản lý các thông tin kiện hàng thông qua quét mã vạch, tương ứng với các nghiệp vụ của từng kiện hàng đó',
+      technical: 'Vue, Vuex',
+      role: 'Frontend',
+      features: [
+        'Phân quyền theo công ty thông qua tài khoản đăng nhập',
+        'Thể hiện các thông tin kiện hàng đã được quét mã vạch, đưa vào kho, xuất kho ',
+        'Thực hiện thao tác với vai trò quản lý khi không sử dụng được app để quét',
+      ]  
+    },
+    {
+      imgUrl: 'https://img.freepik.com/free-vector/goods-shipment-panoramas_1284-34263.jpg?w=996&t=st=1684853711~exp=1684854311~hmac=01a69d5255841e9ea6a52770756f92bcc2123965a00f1c92d1da631bbc920771',
+      startTime: '11/2022',
+      endTime: '01/2024',
+      link: '',
       name: 'Web quản lý điều độ xe',
-      description: 'Web quản lý dành cho nội bộ trong công ty chuyên về logistics(hỗ trợ công việc quản lý của các phòng ban như thư ký, điều độ xe, vận chuyển đơn hàng)',
+      description: 'Web quản lý dành cho nội bộ trong công ty chuyên về logistics(hỗ trợ công việc quản lý của các phòng ban như thư ký, điều độ xe, bảo trì bảo dưỡng xe, lên đơn hàng, vận chuyển đơn hàng, theo dõi vận chuyển)',
       technical: 'Vue, Vuex',
       role: 'Frontend',
       features: [
@@ -66,12 +81,27 @@ const projectList = {
   ],
   english: [
     {
+      imgUrl: 'https://img.freepik.com/free-photo/close-up-scanning-box_23-2148923094.jpg?t=st=1710774494~exp=1710778094~hmac=d129c93809d7da5b6d35cb886fb04035724abd752f5d39ea6f822192cc2db71f&w=1060',
+      startTime: '11/2023',
+      endTime: 'nay',
+      link: '',
+      name: 'Web management scanning barcode',
+      description: 'Web admin for the information of packages by scanning code, corresponding to the function of each package.',
+      technical: 'Vue, Vuex',
+      role: 'Frontend',
+      features: [
+        'Permission to company through login account',
+        'Show the information of scanned packages, import and export wavehouse',
+        "Action as role as admin when the function that can't use app to scan code",
+      ]  
+    },
+    {
       imgUrl: 'https://img.freepik.com/free-vector/goods-shipment-panoramas_1284-34263.jpg?w=996&t=st=1684853711~exp=1684854311~hmac=01a69d5255841e9ea6a52770756f92bcc2123965a00f1c92d1da631bbc920771',
       startTime: 'Nov 2022',
-      endTime: 'Now',
+      endTime: 'Jan 2024',
       link: '',
       name: 'Web management and moderation vehicle',
-      description: 'Web admin for internal company that specializing in logistics(support the management of  department such as secretary, vehicle moderation , order delivery)',
+      description: 'Web admin for internal company that specializing in logistics(support the management of  department such as secretary, vehicle moderation , maintaince vehicle, order, delivery, shipping tracking)',
       technical: 'Vue, Vuex',
       role: 'Frontend',
       features: [

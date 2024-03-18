@@ -7,7 +7,8 @@ const workList = {
       description: `Làm việc ở vị trí frontend.<br />
                     Tham gia xây dựng các dự án nằm trong chuỗi dự án định hướng phát triển của công ty.<br/>
                     Trao đổi với phía Backend, Tester để tối ưu hóa thao tác người dùng.</br>
-                    Nâng cấp, sửa đổi tính năng hệ thống khi khách hàng có yêu cầu`,
+                    Nâng cấp, sửa đổi tính năng hệ thống khi khách hàng có yêu cầu.</br>
+                    Bảo trì, hướng dẫn cho khách hàng về phần mềm trong quá trình bàn giao source`,
       icon: 'fas fa-laptop',
     },
     {
@@ -46,7 +47,8 @@ const workList = {
       description: `Work as frontend role.<br />
                     Join the team what build projects that in the company's development-oriented project chain.<br />
                     Discuss with Backend, Tester to optimize user operation.</br>
-                    Upgrade, modify system features when required by customers.`,
+                    Upgrade, modify system features when required by customers.</br>
+                    Maintain, instruction for customer aboout software in period of handover source`,
       icon: 'fas fa-laptop',
     },
     {
